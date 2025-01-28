@@ -1,0 +1,24 @@
+site_name: SciCat User Manual
+docs_dir: ../../docs
+nav: 
+  - Home: index.md
+  - Login: 
+      - login/index.md
+      - Anonymous: login/Anonymous.md
+      - Dashboard: login/Dashboard.md
+  - Datasets: 
+      - datasets/index.md
+      - Triggering DOIs: datasets/Publishing.md
+  - Proposals: proposals.md
+  - Samples: samples.md
+  - Instruments: instruments.md
+  - Troubleshooting:
+      - troubleshoot/index.md
+  - About: about.md
+
+theme: material
+
+plugins:
+  - search
+  - glightbox
+  - section-index
