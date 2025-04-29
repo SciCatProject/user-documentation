@@ -12,7 +12,8 @@ nav:
       - Dashboard: login/Dashboard.md
     - Datasets:
       - datasets/index.md
-      - Register DOIs: datasets/Publishing.md
+      - Publishing data: datasets/Publishing.md
+      - Publishing data Advanced: datasets/PublishingAdvanced.md
     - Proposals: proposals.md
     - Samples: samples.md
     - Instruments: instruments.md

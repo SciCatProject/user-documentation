@@ -1,8 +1,7 @@
 # Datasets
-Datasets can include several files which e.g. comprise a self-contained measurement - which is fully customizeable during ingestion of meta data. Users can search, view, list the meta data of a dataset. 
+SciCat datasets are sets of meta data and can include several files which e.g. comprise a self-contained measurement - which is fully customizeable during ingestion of meta data. Users can search, view, list the meta data of a dataset. 
 
-To group and tag datasets is depicted [here](grouping_tagging_ds.md). Datasets can also be issued to be published: either removing the restricted view or triggering the process of obtaining a DOI for the selected datasets, see [old description](Publishing.md).
-
+To group and tag datasets is depicted [here](grouping_tagging_ds.md). Datasets can also be issued to be **published**: either removing the restricted view or triggering the process of obtaining a DOI for the selected datasets, see description of [publication of SciCat datasets](Publishing.md).
 
 ### How to query datasets
 

@@ -4,7 +4,7 @@ The configuration file ```.env``` allows the systems administrator to configure 
 
 There are currently many configurable additions to SciCat which makes it very flexible these are:
 
-* OIDC for authenticatoin
+* OIDC for identification
 * LDAP for authentication
 * Elastic Search
 * SMTP for sending emails to notify users of SciCat jobs
@@ -13,7 +13,7 @@ There are currently many configurable additions to SciCat which makes it very fl
 ## Environment Variables
 All environment variables can be used in the ```.env``` filee. The current source code contains an example .env file, named _.env.example_, listing all (79) environment variables available to configure the backend. They can be found [here](https://github.com/SciCatProject/scicat-backend-next/blob/master/.env.example) and define
 
-* How SciCat handles [access rights](#how-to-handle-access-rights) and connects to identity providers - such as [LDAP](#how-to-configure-ldap) or [OIDC](#how-to-configure-oidc)
+* How SciCat handles access rights and connects to other services e.g. to identity providers - such as LDAP or OIDC for authentication.
 * How to configure [DOIs](#how-to-configure-doi-minting).
 * How to configure elasitc search (ES)
 * How to configure jobs
@@ -499,17 +499,12 @@ LOGGERS_CONFIG_FILE="loggers.json"
 DATASET_TYPES_FILE="datasetTypes.json"
 PROPOSAL_TYPES_FILE="proposalTypes.json"
 ```
-### How to configure LDAP
-Here are some details that are currently unknown to the author.
-
-### How to configure OIDC
-Here are some details that are currently unknown to the author.
+### How to configure to connect the backend to other services
+In [scicatlive](https://www.scicatproject.org/scicatlive/latest/services/backend/) you find documentation on how to integrate your SciCat system with services providing identities, (e.g. KeyCloak) and authentication (OpenLDAP).
 
 ### How to configure DOI minting 
-In SciCat one can publish selected datasets that triggers a DOI minting process. Find [here](dois.md) a short introduction and instructions how to set up such a service. SciCat also has the option to make datasets publicly available, if you wish to do that follow [this Link](toBeWritten.md)
-
+In SciCat one can publish selected datasets that triggers a DOI minting process. Find [here](../datasets/Publishing.md) a short introduction and instructions how to set up such a service. SciCat also has the option to make datasets publicly via APIs available, to get a better idea of that follow [this Link](dois.md)
 
 
 ## More advanced options
-
 If you are compiling the application from source, you can edit the file _src/config/configuration.ts_ with the correct values for your infrastructure. **This option is still undocumented, although it is our intention to provide a detailed how-to guide as soon as we can.**
