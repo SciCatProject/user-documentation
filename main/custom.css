@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.custom-font {
+    font-family: 'Pacifico';
+    color: #1eed60; /* Optional: Change text color */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+.custom-serif {
+    font-family: 'Merriweather', serif;
+    font-size: 18px ;
+    font-display: swap;
+}

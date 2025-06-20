@@ -1,0 +1,1508 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../swagger/">
+      
+      
+        <link rel="next" href="authorization/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Central Configuration of Backend: .env - SciCat Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#central-configuration-of-backend-env" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SciCat Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Central Configuration of Backend: .env
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SciCat Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../user-manual/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SciCat User Guide
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SciCat User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../login/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Login
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Login
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/Anonymous/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anonymous
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/Dashboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dashboard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../datasets/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Datasets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/Publishing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/PublishingAdvanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing data Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proposals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../samples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Samples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruments.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instruments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshoot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../operator-manual/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SciCat Operator Guide
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            SciCat Operator Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swagger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Swagger - explore the Backend API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Central Configuration of Backend: .env
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Central Configuration of Backend: .env
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-as-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables as now
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Variables as now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-to-connect-the-backend-to-other-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to configure to connect the backend to other services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-doi-minting" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to configure DOI minting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-advanced-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      More advanced options
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authorization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dois/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DOI minting in SciCat - How to set up publication of datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-as-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables as now
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Variables as now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-to-connect-the-backend-to-other-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to configure to connect the backend to other services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-doi-minting" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to configure DOI minting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-advanced-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      More advanced options
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="central-configuration-of-backend-env">Central Configuration of Backend: <code>.env</code></h1>
+<p>The configuration file <code>.env</code> allows the systems administrator to configure connected services, like authentication services and message queues, and also switching on/off almost all available features and is read by the backend at runtime.</p>
+<p>There are currently many configurable additions to SciCat which makes it very flexible these are:</p>
+<ul>
+<li>OIDC for identification</li>
+<li>LDAP for authentication</li>
+<li>Elastic Search</li>
+<li>SMTP for sending emails to notify users of SciCat jobs</li>
+<li>AMQP to provide a message queue for the jobs</li>
+</ul>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>All environment variables can be used in the <code>.env</code> filee. The current source code contains an example .env file, named <em>.env.example</em>, listing all (79) environment variables available to configure the backend. They can be found <a href="https://github.com/SciCatProject/scicat-backend-next/blob/master/.env.example">here</a> and define</p>
+<ul>
+<li>How SciCat handles access rights and connects to other services e.g. to identity providers - such as LDAP or OIDC for authentication.</li>
+<li>How to configure <a href="#how-to-configure-doi-minting">DOIs</a>.</li>
+<li>How to configure elasitc search (ES)</li>
+<li>How to configure jobs</li>
+</ul>
+<p>The list is compiled according to the configuration class defined in <a href="https://github.com/SciCatProject/scicat-backend-next/blob/master/src/config/configuration.ts"><em>src/config/configuration.ts</em></a>.</p>
+<ul>
+<li>
+<p>ADMIN_GROUPS:<br />
+  list of groups that have admin priviliges<br />
+<em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+</li>
+<li>
+<p>DELETE_GROUPS:<br />
+  list of groups that are allowed to delete content<br />
+<em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+</li>
+<li>
+<p>CREATE_DATASET_GROUPS:<br />
+  list of non admin groups that are allowed to create datasets without pid. The pid is assigned by the system. If set to "#all", all users can create a dataset belonging to any of the groups they belong to.  <br />
+<em>default</em>: "#all"<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+</li>
+<li>
+<p>CREATE_DATASET_WITH_PID_GROUPS:<br />
+  list of non admin groups that are allowed to create datasets with explicit pid. If set to "#all", all users can create a dataset belonging to any of the groups they belong to and with esplicit pid.<br />
+  If the pid verification is enabled, pid will be validated agains the specification passed.<br />
+<em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+</li>
+<li>
+<p>CREATE_DATASET_PRIVILEGED_GROUPS:<br />
+  list of non admin groups that are allowed to create datasets for groups they do not belong to. If set to "#all", all users can create a dataset belonging to any group with explicit pid.<br />
+  If the pid verification is enabled, pid will be validated agains the specification passed.<br />
+<em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+</li>
+<li>
+<p>PROPOSAL_GROUPS:<br />
+  list of non admin groups that are allowed to create and update proposals for groups they do not belong to. If set to "#all", all users can create a dataset belonging to any group with explicit pid.<br />
+<em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed  </p>
+</li>
+<li>
+<p>SAMPLE_GROUPS:<br />
+  list of non admin groups that are allowed to create and update samples for the groups they belong to. If set to "#all", all users can create a dataset belonging to their group.<br />
+<em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed  </p>
+</li>
+<li>
+<p>SAMPLE_PRIVILEGED_GROUPS:<br />
+  list of non admin groups that are allowed to create samples for any groups, but can only update samples belonging to groups they belong to.
+  <em>default</em>: ""<br />
+<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed  </p>
+</li>
+<li>
+<p>ACCESS_GROUPS_STATIC_VALUES:<br />
+  List of groups assigned by default to all users. Used in the vanilla implementation for easy configuration.<br />
+  If you do not want or need to assign any default group, it should be set to empty string "".<br />
+  Default value: ""<br />
+<em>format</em>: Comman separated list of strings. Leading and trailing spaces are trimmed<br />
+<em>example</em>: "group1,group2,group3,..."  </p>
+</li>
+<li>
+<p>ACCESS_GROUP_SERVICE_TOKEN:
+  Access token needed to access the API specified in ACCESS_GROUP_SERVICE_API_URL, used to retrieve access groups from a third party system.<br />
+  _format*: string </p>
+</li>
+<li>
+<p>ACCESS_GROUP_SERVICE_API_URL:<br />
+  Well formed url of the service API used to provide access groups. Only one value is allowed.<br />
+<em>format</em>: string<br />
+<em>example</em>: "https://my.access.group/service/api/url"</p>
+</li>
+<li>
+<p>DOI_PREFIX:<br />
+  The facility DOI prefix, with trailing slash.<br />
+<em>default</em>: ""<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>EXPRESS_SESSION_SECRET:<br />
+  Secret used to set up express session.<br />
+<em>default</em>: ""<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LOGOUT_URL:<br />
+  URL specified upon successful logout. It is returned in the json object for the frontend, or third party UI, to be used locally.<br />
+<em>default</em>: ""<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>HTTP_MAX_REDIRECTS:<br />
+  Max number of redirects for http requests.<br />
+<em>default</em>: 5<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>HTTP_TIMEOUT:<br />
+  Timeout from http requests in ms.<br />
+<em>default</em>: 5000<br />
+<em>format</em>: integer</p>
+</li>
+<li>
+<p>JWT_SECRET:<br />
+  The secret used to create any JWT token, used for authorization.<br />
+<em>default</em>: ""<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>JWT_EXPIRES_IN:<br />
+  Expiration time of any JWT token in seconds.<br />
+<em>default</em>: 3600 (s)<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>JWT_NEVER_EXPIRES:<br />
+  Length of time that the never expiring jwt token will last.<br />
+<em>default</em>: 100y<br />
+<em>format</em>: string as in number of years  </p>
+</li>
+<li>
+<p>LDAP_URL:<br />
+  Full URI (including port) of your local LDAP server, if this is your selected authentication method.<br />
+<em>default</em>: No default<br />
+<em>example</em>: ldaps://ldap.server.com:636/ <br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LDAP_BIND_DN:<br />
+  Bind DN to access information on your LDAP server.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LDAP_BIND_CREDENTIALS:<br />
+  Credentials associated with your bind DN to acccess your LDAP server.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LDAP_SEARCH_BASE:<br />
+  Search base for your LDAP server.<br />
+<em>default</em>: No default <br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LDAP_SEARCH_FILTER:<br />
+  Search filter for you LDAP server.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string <br />
+<em>example</em>: "(LDAPUsername={{username}})"  </p>
+</li>
+<li>
+<p>LDAP_MODE:<br />
+  type of ldap server we are communicating with<br />
+<strong><em>NEEDS TO BE UPDATED. Not sure which other values are accepted</em></strong><br />
+<em>default</em>: ad<br />
+<em>format</em>: string<br />
+<em>acceptable values</em>: ad  </p>
+</li>
+<li>
+<p>LDAP_EXTERNAL_ID:<br />
+  LDAP matching field that provides the external id<br />
+<em>default</em>: sAMAccountName<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LDAP_USERNAME:<br />
+  LDAP field providing the username<br />
+<em>default</em>: displayName<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>OIDC_ISSUER:<br />
+  Full URL of your OIDC identity provider<br />
+<em>default</em>: No default<br />
+<em>format</em>: string<br />
+<em>example</em>: "https://identity.your.facility/your/realm"  </p>
+</li>
+<li>
+<p>OIDC_CLIENT_ID:<br />
+  Client id used to convert OIDC code to OIDC token. This is assigned in the OIDC service when the token is generated<br />
+<em>default</em>: No default<br />
+<em>format</em>: string<br />
+<em>example</em>: "scicat"  </p>
+</li>
+<li>
+<p>OIDC_CLIENT_SECRET: <br />
+  Token used to convert OIDC code to OIDC token. This is assigned in the OIDC service when the token is generated<br />
+<em>example</em>: "90f1268..."  </p>
+</li>
+<li>
+<p>OIDC_CALLBACK_URL:<br />
+  URL of the endpoint that is called when the authentication has been executed with the OIDC service. <br />
+<em>default</em>: No default <br />
+<em>format</em>: string  <br />
+<em>example</em>: "http://localhost:3000/api/v3/oidc/callback"  </p>
+</li>
+<li>
+<p>OIDC_SCOPE:<br />
+  Information returned by the OIDC service together with token<br />
+<em>default</em>: No default<br />
+<em>format</em>: string <br />
+<em>example</em>: "openid profile email"  </p>
+</li>
+<li>
+<p>OIDC_SUCCESS_URL:<br />
+  Frontend URL that the user is directed to after a successful authentication. It must be a valid frontend URL.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string<br />
+<em>example</em>: "http://localhost:3000/Datasets"  </p>
+</li>
+<li>
+<p>OIDC_ACCESS_GROUPS:<br />
+  field used to retrieve access groups from the OIDC service. It is not used in the vanilla implementation.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string<br />
+<em>example</em>: "access_groups"  </p>
+</li>
+<li>
+<p>OIDC_ACCESS_GROUPS_PROPERTY:<br />
+  name of the OIDC property used to retrieve the users groups from OIDC.<br />
+<em>default</em>: none<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>OIDC_AUTO_LOGOUT:<br />
+  if enabled, when login out from SciCat, we logout from OIDC also.<br />
+<em>default</em>: false<br />
+<em>format</em>: boolean  </p>
+</li>
+<li>
+<p>OIDC_RETURN_URL:<br />
+  URL the user is redirected after a successful logout<br />
+<em>default</em>: none<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LOGBOOK_ENABLED:<br />
+  Flag to enable/disable the Logbook endpoints.<br />
+  accept values: "yes", "no"<br />
+<em>default</em>: no <br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LOGBOOK_BASE_URL:<br />
+  The base URL to the SciChat wrapper API. Only required if Logbook is enabled.<br />
+<em>default</em>: "http://localhost:3030/scichatapi"<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LOGBOOK_USERNAME:<br />
+  The username used to authenticate to the SciChat wrapper API. Only required if Logbook is enabled.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>LOGBOOK_PASSWORD:<br />
+  The password used to authenticate to the SciChat wrapper API. Only required if Logbook is enabled.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>METADATA_KEYS_RETURN_LIMIT:<br />
+  The maximum number of keys returned by the <code>/Datasets/metadataKeys</code> endpoint.<br />
+<em>default</em>: No default<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>METADATA_PARENT_INSTANCES_RETURN_LIMIT:<br />
+  The maximum number of Datasets used to extract metadata keys in the <code>/Datasets/metadataKeys</code> endpoint.<br />
+<em>default</em>: No default<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>MONGODB_URI:<br />
+  The URI for your MongoDB instance.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string "mongodb://<USERNAME>:<PASSWORD>@<HOST>:27017/<DB_NAME>"  </p>
+</li>
+<li>
+<p>OAI_PROVIDER_ROUTE:<br />
+  URI to OAI provider, which is used in the <code>/publisheddata/:id/resync</code> endpoint.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>PID_PREFIX:<br />
+  The facility PID prefix, with trailing slash.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>PUBLIC_URL_PREFIX:<br />
+  The base URL to the facility Landing Page.<br />
+<em>default</em>: No default<br />
+<em>format</em>: string<br />
+<em>example</em>: "https://doi.ess.eu/detail/"  </p>
+</li>
+<li>
+<p>PORT:<br />
+  The port on which the backend listen on.<br />
+<em>default</em>: 3000<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>RABBITMQ_ENABLED:<br />
+  Flag to enable/disable RabbitMQ consumer.<br />
+  accepted values: "yes", "no"<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>RABBITMQ_HOSTNAME:<br />
+  The hostname of the RabbitMQ message broker. Only required if RabbitMQ is enabled.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>default</em>: string  </p>
+</li>
+<li>
+<p>RABBITMQ_USERNAME:<br />
+  The username used to authenticate to the RabbitMQ message broker. Only required if RabbitMQ is enabled.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>RABBITMQ_PASSWORD:<br />
+  The password used to authenticate to the RabbitMQ message broker. Only required if RabbitMQ is
+  enabled.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>REGISTER_DOI_URI:<br />
+  URI to the organization that registers the facilities DOIs.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string<br />
+<em>example</em>: "https://mds.test.datacite.org/doi"  </p>
+</li>
+<li>
+<p>REGISTER_METADATA_URI:<br />
+  URI to the organization that registers the facilities published data metadata.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string<br />
+<em>example</em>: ="https://mds.test.datacite.org/metadata"  </p>
+</li>
+<li>
+<p>DOI_USERNAME:
+  Username used to authenticate on the DOI site<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>DOI_PASSWORD:<br />
+  Password used to authenticate on the DOI site<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>SITE:<br />
+  The name of your site.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>SMTP_HOST:<br />
+  Host of SMTP server.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>SMTP_MESSAGE_FROM:<br />
+  Email address that emails should be sent from.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string, email  </p>
+</li>
+<li>
+<p>SMTP_PORT:<br />
+  Port of SMTP server.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>SMTP_SECURE:<br />
+  Secure of SMTP server.<br />
+<em>deprecated</em>. Will be removed in future releases.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>POLICY_PUBLICATION_SHIFT:<br />
+  Number of years that needs to elapse before the dataset is made publicly acceessible<br />
+<em>default</em>: 3<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>POLICY_RETENTION_SHIFT:<br />
+  Number of years that the datasets are kept online before are archived or deleted. A negative value means that they are never archived/deleted<br />
+<em>default</em>: -1<br />
+<em>format</em>: integer  </p>
+</li>
+<li>
+<p>ELASTICSEARCH_ENABLED:<br />
+  Flag to enable/disable the ElasticSearch service<br />
+  accept values: "yes", "no"<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>ES_HOST:<br />
+  The base URL to the Elasticsearch cluster. Use <code>http</code> if xpack.security is disabled<br />
+<em>default</em>: no default<br />
+<em>format</em>: string <br />
+<em>example</em>: "https://localhost:9200" or "http://localhost:9200"  </p>
+</li>
+<li>
+<p>MONGODB_COLLECTION:<br />
+  Collection name to be mapped into specified Elasticsearch index<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>ES_MAX_RESULT: <br />
+  Maximum records can be indexed into Elasticsearch.<br />
+<em>default</em>: 10000<br />
+<em>format</em>: number  </p>
+</li>
+<li>
+<p>ES_FIELDS_LIMIT: <br />
+  The total number of fields in an index.<br />
+<em>default</em>: 1000<br />
+<em>format</em>: number  </p>
+</li>
+<li>
+<p>ES_INDEX:<br />
+  The total number of fields in an index.<br />
+<em>default</em>: no default<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>ES_REFRESH:<br />
+  The total number of fields in an index.<br />
+  accept values: true, false, "wait_for"<br />
+<em>default</em>: false<br />
+<em>format</em>: boolean or string  </p>
+</li>
+<li>
+<p>ES_USERNAME:<br />
+  Elasticsearch cluster username.<br />
+<em>default</em>: no default, optional.<br />
+<em>format</em>: string  </p>
+</li>
+<li>
+<p>ELASTIC_PASSWORD: <br />
+  Elasticsearch cluster password.<br />
+<em>default</em>: no default.<br />
+<em>format</em>: string  </p>
+</li>
+</ul>
+<h2 id="environment-variables-as-now">Environment Variables as now</h2>
+<pre><code>ACCESS_GROUP_SERVICE_API_URL=&quot;&quot;
+ACCESS_GROUP_SERVICE_TOKEN=&quot;&quot;
+DOI_PREFIX=&quot;&lt;DOI_PREFIX&gt;&quot;
+EXPRESS_SESSION_SECRET=&quot;&lt;EXPRESS_SESSION_SECRET&gt;&quot;
+HTTP_MAX_REDIRECTS=5
+HTTP_TIMEOUT=5000
+JWT_SECRET=&lt;JWT_SECRET&gt;
+JWT_EXPIRES_IN=3600
+LDAP_URL=&quot;ldaps://ldap.server.com:636/&quot;
+LDAP_BIND_DN=&quot;&lt;USERNAME&gt;@server.com&quot;
+LDAP_BIND_CREDENTIALS=&lt;PASSWORD&gt;
+LDAP_SEARCH_BASE=&lt;SEARCH_BASE&gt;
+LDAP_SEARCH_FILTER=&quot;(LDAPUsername={{username}})&quot;
+LOGBOOK_ENABLED=&quot;no&quot;
+LOGBOOK_BASE_URL=&quot;http://localhost:3030/scichatapi&quot;
+
+METADATA_KEYS_RETURN_LIMIT=100
+METADATA_PARENT_INSTANCES_RETURN_LIMIT=100
+MONGODB_URI=&quot;mongodb://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;HOST&gt;:27017/&lt;DB_NAME&gt;&quot;
+OAI_PROVIDER_ROUTE=&quot;&lt;OAI_PROVIDER_ROUTE&gt;&quot;
+PID_PREFIX=&quot;&lt;PID_PREFIX&gt;&quot;
+PUBLIC_URL_PREFIX=&quot;https://doi.esss.se/detail/&quot;
+PORT=3000
+RABBITMQ_ENABLED=&lt;&quot;yes&quot;|&quot;no&quot;&gt;
+RABBITMQ_HOSTNAME=&quot;localhost&quot;
+RABBITMQ_USERNAME=&quot;rabbitmq&quot;
+RABBITMQ_PASSWORD=&quot;rabbitmq&quot;
+REGISTER_DOI_URI=&quot;https://mds.test.datacite.org/doi&quot;
+REGISTER_METADATA_URI=&quot;https://mds.test.datacite.org/metadata&quot;
+DOI_USERNAME=&quot;username&quot;
+DOI_PASSWORD=&quot;password&quot;
+SITE=&lt;SITE&gt;
+EMAIL_TYPE=&lt;&quot;smtp&quot;|&quot;ms365&quot;&gt;
+EMAIL_FROM=&lt;MESSAGE_FROM&gt;
+SMTP_HOST=&lt;SMTP_HOST&gt;
+SMTP_PORT=&lt;SMTP_PORT&gt;
+SMTP_SECURE=&lt;&quot;yes&quot;|&quot;no&quot;&gt;
+MS365_TENANT_ID=&lt;tenantId&gt;
+MS365_CLIENT_ID=&lt;clientId&gt;
+MS365_CLIENT_SECRET=&lt;clientSecret&gt;
+
+DATASET_CREATION_VALIDATION_ENABLED=true
+DATASET_CREATION_VALIDATION_REGEX=&quot;^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$&quot;
+
+ADMIN_GROUPS=&quot;&quot;
+DELETE_GROUPS=&quot;&quot;
+CREATE_DATASET_GROUPS=&quot;all&quot;
+CREATE_DATASET_WITH_PID_GROUPS=&quot;&quot;
+CREATE_DATASET_PRIVILEGED_GROUPS=&quot;&quot;
+CREATE_JOB_GROUPS=&quot;&quot;
+UPDATE_JOB_GROUPS=&quot;&quot;
+SAMPLE_PRIVILEGED_GROUPS=&quot;sampleingestor&quot;
+SAMPLE_GROUPS=&quot;group1&quot;
+PROPOSAL_GROUPS=&quot;&quot;
+
+ACCESS_GROUPS_GRAPHQL_ENABLED=true
+ACCESS_GROUP_SERVICE_TOKEN=&quot;&quot;
+ACCESS_GROUP_SERVICE_API_URL=&quot;&quot;
+ACCESS_GROUP_SERVICE_HANDLER=&quot;&quot;
+ACCESS_GROUPS_STATIC_ENABLED=true
+ACCESS_GROUPS_OIDCPAYLOAD_ENABLED=true
+
+OIDC_USERINFO_MAPPING_FIELD_USERNAME=&quot;iss, sub&quot;
+OIDC_USERINFO_MAPPING_FIELD_DISPLAYNAME=&quot;preferred_username&quot;
+OIDC_USERINFO_MAPPING_FIELD_EMAIL=&quot;email&quot;
+OIDC_USERINFO_MAPPING_FIELD_GROUP=&quot;groups&quot;
+OIDC_USERQUERY_OPERATOR=&lt;&quot;or&quot;|&quot;and&quot;&gt;
+OIDC_USERQUERY_FILTER=&quot;username:username, email:email&quot;
+
+ELASTICSEARCH_ENABLED=&lt;&quot;yes&quot;|&quot;no&quot;&gt;
+STACK_VERSION=&quot;8.8.2&quot;
+CLUSTER_NAME=&quot;es-cluster&quot;
+MEM_LIMIT=&quot;4G&quot;
+MONGODB_COLLECTION=&quot;Dataset&quot;
+ES_MAX_RESULT=100000
+ES_FIELDS_LIMIT=400000
+ES_INDEX=&quot;dataset&quot;
+ES_PORT=9200
+ES_HOST=&quot;https://localhost:9200&quot;
+ES_USERNAME=&quot;elastic&quot;
+ES_PASSWORD=&quot;duo-password&quot;
+ES_REFRESH=&lt;&quot;wait_for&quot;|&quot;false&quot;&gt;
+
+LOGGERS_CONFIG_FILE=&quot;loggers.json&quot;
+DATASET_TYPES_FILE=&quot;datasetTypes.json&quot;
+PROPOSAL_TYPES_FILE=&quot;proposalTypes.json&quot;
+</code></pre>
+<h3 id="how-to-configure-to-connect-the-backend-to-other-services">How to configure to connect the backend to other services</h3>
+<p>In <a href="https://www.scicatproject.org/scicatlive/latest/services/backend/">scicatlive</a> you find documentation on how to integrate your SciCat system with services providing identities, (e.g. KeyCloak) and authentication (OpenLDAP).</p>
+<h3 id="how-to-configure-doi-minting">How to configure DOI minting</h3>
+<p>In SciCat one can publish selected datasets that triggers a DOI minting process. Find <a href="../datasets/Publishing/">here</a> a short introduction on SciCats Published Data class. Instructions how to configure this DOI minting service and in addition make datasets publicly via APIs follow <a href="dois/">this Link.</a></p>
+<h2 id="more-advanced-options">More advanced options</h2>
+<p>If you are compiling the application from source, you can edit the file <em>src/config/configuration.ts</em> with the correct values for your infrastructure. <strong>This option is still undocumented, although it is our intention to provide a detailed how-to guide as soon as we can.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
