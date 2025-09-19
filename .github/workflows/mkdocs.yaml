@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: SciCatProject/scicatlive/.github/actions/mkdocs-pages@main
+      - uses: SciCatProject/scicatlive/.github/actions/mkdocs-pages@tree
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           push: true
