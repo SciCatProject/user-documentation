@@ -12,7 +12,7 @@
         <link rel="prev" href="../Publishing/">
       
       
-        <link rel="next" href="../../proposals/">
+        <link rel="next" href="../jobs/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -236,7 +236,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-manual/" class="md-nav__link ">
+            <a href="../../user-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -488,6 +488,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Create a list of selected datasets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-review-to-be-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal review (to be implemented)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -535,6 +550,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Retrieval
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -597,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../instruments.md" class="md-nav__link">
+      <a href="../../instruments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +694,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../operator-manual/" class="md-nav__link ">
+            <a href="../../operator-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -836,6 +872,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Create a list of selected datasets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-review-to-be-implemented" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal review (to be implemented)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -897,11 +948,13 @@
 <h1 id="publishing-scicat-datasets-advanced">Publishing SciCat datasets Advanced</h1>
 <p>The previously described options to <a href="../Publishing/">publish datasets</a> in SciCat - the process of registration of a selection of datasets - is here outlined in a more technical way.</p>
 <h2 id="implementation-workflow-target">Implementation workflow target</h2>
-<p>This diagram shows the essential steps in the workflow to be implemented. Please note, that SciCat datasets are <em>always</em> only <em>meta datasets</em>, SciCat has no direct to the storage system there is no default coupling to such systems.</p>
+<p>Please note only metadata is stored in SciCat, there is no direct coupling between the software and the storage system. If you wish to publish both the metadata and data, please speak to your operator or consult the developer documentation for examples.</p>
 <h3 id="1-create-a-list-of-selected-datasets">1. Create a list of selected datasets</h3>
-<p>User can select datasets to create a <strong>dataset list</strong>; more datasets can be added and removed in several sessions. He can cancel the process at any time. New will be that while examining single datasets he can directly add or remove them to or from the selection in the cart.</p>
+<p>You can select datasets to create a <strong>dataset list</strong>; more datasets can be added and removed in several sessions. You can cancel the process at any time. New will be that while examining single datasets he can directly add or remove them to or from the selection in the cart. Before proceeding, you will be asked to verify the selection of datasets. You as user have finalized the dataset selection for which you want to register the dataset with a DOI.</p>
+<h5 id="internal-review-to-be-implemented">Internal review (to be implemented)</h5>
+<p>Some institutions may introduce an internal review step at this point: other authenticated user (as part of a dedicated reviewer-group) review the selected datasets. If OK, proceed to next form and the initial you can continue the DOI minting process.</p>
 <h3 id="2-fill-the-form-for-this-dataset-selection">2. Fill the form for this dataset selection</h3>
-<p>The user will be forwarded to a form where one can <strong>provide metadata specific to this selection</strong> which can e.g. match site specific information about e.g. grants, associated projects, etc. All selected datasets will be made public. You will be asked to verify the selection of datasets. Owners and Admins are allowed to update this form. Again this shall be possible within several sessions.</p>
+<p>You will be forwarded to a form where you provide <strong>metadata specific to this selection</strong> already conform to DataCite metadata fields to match site specific information about e.g. grants, associated projects, etc. All selected datasets will be made public. Owners (and Admins) are allowed to update this form. Again, this shall be possible within several sessions.</p>
 <h3 id="3-publish-the-selection">3. Publish the selection</h3>
 <p>After hitting button all selected datasets become publicly visible: not only the owner can view all the metadata of the data, date of creation, associated files names, location, PI, etc. This is <strong>prerequisite</strong> for DOI registration.  </p>
 <h3 id="4-doi-registration">4. DOI registration</h3>

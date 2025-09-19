@@ -236,7 +236,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../user-manual/" class="md-nav__link ">
+            <a href="../user-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -440,6 +440,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Retrieval
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -497,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../instruments.md" class="md-nav__link">
+      <a href="../instruments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,7 +579,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../operator-manual/" class="md-nav__link ">
+            <a href="../operator-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -720,9 +741,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-query-datasets" class="md-nav__link">
+  <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      How to query datasets
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-search-for-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to search for datasets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset details
     </span>
   </a>
   
@@ -773,15 +812,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#new-developments-on-dataset-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      New developments on dataset types
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -798,16 +828,35 @@
 
 
 <h1 id="datasets">Datasets</h1>
-<p>SciCat datasets are sets of meta data and can include several files which e.g. comprise a self-contained measurement - which is fully customizeable during ingestion of meta data. Users can search, view, list the meta data of a dataset. </p>
-<p>To group and tag datasets is depicted <a href="grouping_tagging_ds/">here</a>. Datasets can also be issued to be <strong>published</strong>: either removing the restricted view or triggering the process of obtaining a DOI for the selected datasets, see description of <a href="Publishing/">publication of SciCat datasets</a>.</p>
-<h3 id="how-to-query-datasets">How to query datasets</h3>
+<p>SciCat datasets are sets of metadata and can include several files which e.g. comprise a self-contained measurement - which is fully customizeable during ingestion of metadata. Users can search and view different formats (e.g. in tree, tables or as JSON) of the dataset and list them. </p>
+<h2 id="features">Features</h2>
+<p>A very handy feature is to <strong>group and tag</strong> datasets. Find <a href="grouping_tagging_ds/">here</a> more details how to group them using tags. </p>
+<p>Datasets can also be selected for <strong>several actions</strong>:
+One such action is the <em>publication</em> of that selection. For more details see <a href="Publishing/">publication of SciCat datasets</a>.
+Generally, actions depend on what is implemented at your site and can cover a wide range from
+comprising them into a <em>new datacollection of a custom type</em> <a href="datasetTypes/">(see advanced documentation)</a> to
+using that selection of datasets to <em>run an analysis</em> on them.</p>
+<h2 id="how-to-search-for-datasets">How to search for datasets</h2>
+<p>Datasets can be queried in several places: </p>
+<ul>
+<li>The search bar at the top of the page provides a quick free text search.</li>
+<li>The filter &amp; conditions column on the left allow you to customize your filters and conditions, adjust the filters to those that you find interesting and define your own conditions making use of your specific scientific metadata.</li>
+</ul>
+<p>The bar looks like this:
+<a class="glightbox" href="img/datasets_SearchBar.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="search bar" src="img/datasets_SearchBar.png" /></a></p>
+<p>Filtering by conditions can be applied through the option box on the left.</p>
+<p><a class="glightbox" href="img/datasets_filterNConditions_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="filterColumn" src="img/datasets_filterNConditions_1.png" /></a></p>
+<p>If you chose "More Filters" a pop-up window appears where you can chose which of the filters you want to display. You can also add your own conditions as well (visible in the background under conditions):
+<a class="glightbox" href="img/datasets_filterNConditions_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="apply filters and conditions" src="img/datasets_filterNConditions_2.png" /></a></p>
+<h2 id="dataset-details">Dataset details</h2>
+<p>The main tab shows the details of a dataset.</p>
+<p><a class="glightbox" href="img/dataset_details_PSI.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="example of dataset details page" src="img/dataset_details_PSI.png" /></a></p>
 <h2 id="dataset-file-listing">Dataset file listing</h2>
-<p>Here is the view of files belonging to a dataset: Below the PID on the top, one finds the tab <strong>Datafiles</strong>:
+<p>A dataset can have several associated files to it. They can be listed by clicking on the tab <strong>Datafiles</strong> just right to the Details tab:
 <a class="glightbox" href="img/dataset_details_filelist.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="list" src="img/dataset_details_filelist.png" /></a></p>
 <h2 id="dataset-attachments">Dataset attachments</h2>
-<p>What kind of attachement can be saved? Will they be searchable? Can also other formats be attached than pngs?</p>
-<p>On the dataset details page, you can click on the Attachments tab
-<a class="glightbox" href="img/dataset_attachments_PSI.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Choose an image file, must be under 16 MB limit" src="img/dataset_attachments_PSI.png" /></a></p>
+<p>Another tab is for the attachements of a dataset, e.g. PNG or TIFF images.</p>
+<p><a class="glightbox" href="img/dataset_attachments_PSI.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Choose an image file, must be under 16 MB limit" src="img/dataset_attachments_PSI.png" /></a></p>
 <p>Simply follow the instructions to upload an image. The size is restricted to be below 16 MB.</p>
 <h2 id="view-raw-json-data">View raw JSON data</h2>
 <p>Scientific meta data is shown in JSON under its section and looks like this:
@@ -815,12 +864,8 @@
 <h2 id="get-raw-json-data">Get raw JSON data</h2>
 <p>One can also get the JSON file via the swagger API. If set up, one can directly access the API endpoints of SciCat backend. Usually the address is in the form: <code>my-scicat-instance.country/explorer</code>, swagger is accessible via the explorer. One needs to authenticate by copying the token from the GUI into the field <strong>authorize</strong>, then find the dataset of interest, by trying it out it will display you dataset and you can download it in JSON format.</p>
 <h2 id="edit-scientific-meta-data">Edit Scientific meta data</h2>
-<p>// WARNING: this is the old text! 
-If enabled, fields in the scientific metadata can be modified and edited by the owner of the data by hitting the "Edit" Icon. The user can add,remove or change metadata fields, every change will create a new record in the databse with it's history.</p>
+<p>If enabled, fields in the scientific metadata can be modified and edited by any member of the <a href="../backendconfig/authorization/authorization_datasets/">Owner Group</a> of the data by hitting the "Edit" Icon. The user can add, remove or change metadata fields, every change will create a new record in the databse with it's history [feature is soon available again from 2025-07-02].</p>
 <p><a class="glightbox" href="img/editMetadata.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image edit metadata" src="img/editMetadata.png" /></a></p>
-<h2 id="new-developments-on-dataset-types">New developments on dataset types</h2>
-<p>Generalize datatypes to remove restrictions of <code>raw</code> and <code>derived</code> types (difference was a set of dataset properties).</p>
-<p><a href="datasetTypes/">datasetTypes</a></p>
 
 
 

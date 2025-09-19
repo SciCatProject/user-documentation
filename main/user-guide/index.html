@@ -9,18 +9,22 @@
       
       
       
+        <link rel="prev" href="..">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+        <link rel="next" href="../login/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
-        <title>How to run new dataset endpoint in v4 - SciCat Documentation</title>
+        <title>SciCat User Guide - SciCat Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -39,16 +43,16 @@
       
     
     
-      <link rel="stylesheet" href="../../custom.css">
+      <link rel="stylesheet" href="../custom.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -57,7 +61,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -69,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-run-new-dataset-endpoint-in-v4" class="md-skip">
+        <a href="#welcome-to-scicat-users-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +89,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
+    <a href=".." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to run new dataset endpoint in v4
+              SciCat User Guide
             
           </span>
         </div>
@@ -180,7 +184,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
+    <a href=".." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -198,7 +202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -215,22 +219,24 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-manual/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -241,13 +247,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             SciCat User Guide
@@ -273,7 +279,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../login/" class="md-nav__link ">
+            <a href="../login/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -304,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../login/Anonymous/" class="md-nav__link">
+      <a href="../login/Anonymous/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -325,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../login/Dashboard/" class="md-nav__link">
+      <a href="../login/Dashboard/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,7 +372,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../datasets/" class="md-nav__link ">
+            <a href="../datasets/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -397,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasets/Publishing/" class="md-nav__link">
+      <a href="../datasets/Publishing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,11 +424,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../datasets/PublishingAdvanced/" class="md-nav__link">
+      <a href="../datasets/PublishingAdvanced/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Publishing data Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Retrieval
   </span>
   
 
@@ -447,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/" class="md-nav__link">
+      <a href="../proposals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -468,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samples/" class="md-nav__link">
+      <a href="../samples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -489,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../instruments.md" class="md-nav__link">
+      <a href="../instruments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -510,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshoot/" class="md-nav__link">
+      <a href="../troubleshoot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -550,7 +577,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../operator-manual/" class="md-nav__link ">
+            <a href="../operator-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -581,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../swagger/" class="md-nav__link">
+      <a href="../swagger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backendconfig/" class="md-nav__link">
+      <a href="../backendconfig/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -623,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backendconfig/authorization/" class="md-nav__link">
+      <a href="../backendconfig/authorization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backendconfig/dois/" class="md-nav__link">
+      <a href="../backendconfig/dois/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -705,6 +732,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-scicat" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to run SciCat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-scicat" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use SciCat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-tos-for-users-quick-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      How-Tos for Users (Quick-links)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-few-more-how-tos-for-users-and-site-admins" class="md-nav__link">
+    <span class="md-ellipsis">
+      A few more How-To's for users and site-admins
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -718,53 +789,41 @@
                   
 
 
-<h1 id="how-to-run-new-dataset-endpoint-in-v4">How to run new dataset endpoint in v4</h1>
-<p>For now one can run and play with the new version of dataset endpoints v4. Here is how to set it up:</p>
+<h1 id="welcome-to-scicat-users-guide">Welcome to SciCat Users Guide</h1>
+<p>Scicat, a scientific metadata catalogue, allows your to explore your datasets through their metadata. SciCat has mechanisms to interact with the related datasets through its flexible integration with most storage systems.</p>
+<p>SciCat is a data management tool accompanying some critical steps during the entire data life cycle which are: getting an overview of datasets for data analysis, for re-analysis, for publishing datasets, and in particular for publication. </p>
+<p>Advantages of SciCat:</p>
+<ul>
+<li>It can be integrated to almost any other service that has REST APIs. Therefore, site-specific applications can be easily integrated. </li>
+<li>The Data Model of SciCat forsees a schemaless fields for quite different use cases. This concept has been implemented for the main class, Datasets, but is extended to function in the same way for the other classes e.g. Proposlas, Samples, Intstruments and Published Data.</li>
+<li>Its components are based on OpenSource software projects and state of the art technologies using MongoDB as backbone database, nestjs as backend basis. </li>
+</ul>
+<p>In the past 5 years SciCat has undergone major improvements in key areas for better user experience and re-structuring to meet the various different needs of photon science labs. The collaboration has grown and governance will be soon established.</p>
+<h2 id="how-to-run-scicat">How to run SciCat</h2>
+<p>More detailed information on how to run scicat, see <a href="https://www.scicatproject.org/scicatlive/latest/">scicatlive documentation</a>. For more details on how to ingest, setup and deploy information from SciCat, see the <a href="../operator-guide/">operator's guide</a>. </p>
+<h2 id="how-to-use-scicat">How to use SciCat</h2>
+<p>Once metadata is ingested into SciCat, the user can login and view, edit the metadata, list, filter and make a selection of interesting datasets using also scientific metadata. There are four main areas of SciCat where metadata can be explored:</p>
 <ol>
-<li>Pre-requisits: admin rights, git, docker, nodejs (v.20.18.2) and npm (v10.8.2).</li>
-<li>For frontend to run, install angular like this: "npm install -g @angular"</li>
-<li>Git clone frontend and backend repository.</li>
-<li>Launch "npm install" in each dir by entering "npm install", respectively.</li>
-<li>Configuration of backend: add "loggers.json", "functionalAccounts.json",
-"proposalTypes.json", "datasetTypes.json" und ".env" files (there are examples named *.example).</li>
-<li>Start MongoDB: I do it using docker container. Recipe is get the image, e.g. bitnami/mongodb:latest, attach volume to it, e.g. "mongodb", mount it, e.g. to /bitnami/mongodb, port 27017. Open in host on 27017.</li>
-<li>Optional</li>
-<li>Start backend: in dir of backend run "npm run start". After about 10s you should be able to view the APIs from "localhost:3000/explorer" in the browser.</li>
-<li>
-<p>Start frontend: in dir of frontend run "npm run start". After about 40s one should see under "localhost:4200" to SciCat frontend.</p>
-</li>
-<li>
-<p>Voraussetzungen: Adminrechte, Git, Docker, NodeJS (ich habe es jetzt
-mit v.20.18.2 laufen) inkl. npm (bei mir v10.8.2).</p>
-</li>
-<li>Wenn Frontend laufen soll: Über npm angular installieren via "npm
-install -g @angular".</li>
-<li>Front- und Backend Repositories von GitHub klonen.</li>
-<li>Jeweils im Verzeichnis von Backend und Frontend einmal "npm install"
-um die Dependencies zu installieren.</li>
-<li>Backendkonfiguration: Das Backend braucht fünf zusätzliche Dateien um
-richtig zu laufen: "loggers.json", "functionalAccounts.json",
-"proposalTypes.json", "datasetTypes.json" und ".env". Für alle davon ist
-eine Beispieldatei schon vorhanden (die .env.example ist allerdings
-Mist, ich habe mal meine momentane angehängt mit der es läuft).</li>
-<li>MongoDB starten: Mache ich über einen Docker-Container. Rezept: Image
-bitnami/mongodb:latest, Volumen "mongodb" anlegen und im Container auf
-/bitnami/mongodb mounten, Port 27017 im Container auf 27017 im Host
-öffnen.</li>
-<li>(Optional?) MongoDB anlegen: Über Docker in den laufenden mongodb
-Container einloggen. Auf der Shell "mongosh dacat" ausführen, das legt
-die DB "dacat" an (andere name geht auch, dann muss das nur auch in der
-.env anders!). Laut der alten Dokumentation muss man dann in der mongosh
-den Befehl "db.Dataset.createIndex( { "$**" : "text" } )" ausführen, um
-Textindexing zu bekommen. Nicht 100% sicher ob das noch aktuell ist,
-musst du mal Max zu fragen.</li>
-<li>Backend starten: Im Backendverzeichnis "npm run start", sollte dann
-nach ca. 10s laufen. Testen, indem "localhost:3000/explorer" im Browser
-geöffnet wird - wenn Swagger zu sehen ist, läuft es.</li>
-<li>Frontend starten: Nachdem das Backend läuft, wieder "npm run start"
-im Frontendverzeichnis ausführen. Frontend sollte nach Kompilierung (ca.
-30s) auf "localhost:4200" zu sehen sein.</li>
+<li><a href="../datasets/">Datasets</a>: Metadata in SciCat is ideally sorted according to a dataset. It can have several associated files attached which have the same metadata like a thumbnail or most common image files.</li>
+<li><a href="../proposals.md">Proposals</a>: are used to link datasets to the proposal under which beamtime was granted.</li>
+<li><a href="../instruments.md">Instruments</a>: Instruments is a library of instruments available at your institute, which can be linked to datasets.</li>
+<li><a href="../samples.md">Samples</a>: Here you can add metadata describing a physical sample which can be linked to it’s experimental use captured in datasets. </li>
 </ol>
+<p>For many the SciCat datasets are the entry point to the catalogue, but soon it will be possible to start with samples or published data records (registered metadata sets).
+You can just browse what's in the catalogue for any published datasets. Else one can list all datasets that I either own or have access to. Here is how to find more on how to proceed:</p>
+<h2 id="how-tos-for-users-quick-links">How-Tos for Users (Quick-links)</h2>
+<ul>
+<li><a href="../login/">Login</a></li>
+<li>Search and find your data, see <a href="../datasets/#how-to-query-datasets">Datasets How to query</a></li>
+<li>How to change some fields after ingestion</li>
+<li>How to view history of changes to a dataset</li>
+<li>How to <a href="../datasets/grouping_tagging_ds/">group and tag datasets</a>.</li>
+<li>How to group and tag grouped datasets</li>
+</ul>
+<h2 id="a-few-more-how-tos-for-users-and-site-admins">A few more How-To's for users and site-admins</h2>
+<ul>
+<li>Where to find the version of the deployed SciCat Frontend? Check <a href="../about/operatorHowTos/">here</a>.</li>
+</ul>
 
 
 
@@ -811,10 +870,10 @@ im Frontendverzeichnis ausführen. Frontend sollte nach Kompilierung (ca.
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

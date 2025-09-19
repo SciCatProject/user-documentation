@@ -236,7 +236,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../user-manual/" class="md-nav__link ">
+            <a href="../../user-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -412,24 +412,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#searching" class="md-nav__link">
-    <span class="md-ellipsis">
-      Searching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-table-columns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure table columns
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#view-details" class="md-nav__link">
     <span class="md-ellipsis">
       View Details
@@ -540,6 +522,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Retrieval
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -597,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../instruments.md" class="md-nav__link">
+      <a href="../../instruments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -658,7 +661,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../operator-manual/" class="md-nav__link ">
+            <a href="../../operator-guide/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -853,24 +856,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#searching" class="md-nav__link">
-    <span class="md-ellipsis">
-      Searching
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-table-columns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure table columns
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#view-details" class="md-nav__link">
     <span class="md-ellipsis">
       View Details
@@ -895,15 +880,28 @@
 
 
 <h1 id="dashboard">Dashboard</h1>
-<p>The dashboard is the first page that you see when you are logged in. When set to datasets as main access point, it will show an overview of all datasets that you have access to. <!--Soon it will be possible to obtain this overview page for the other objects such as proposals, samples, published data and instruments. This can be configured by your site-admin.--></p>
+<p>SciCat's Dashboard or also sometimes called Landing Page is the first page that you see independent of whether you are logged in or not. If you want to login click <em>Sign in</em> on the top right button, see <a href="../">here</a> for more information. When set to datasets as main access point, it will show an overview of all datasets that you have access to. If you do not login you see those that are public. <!--Soon it will be possible to obtain this overview page for the other objects such as proposals, samples, published data and instruments. This can be configured by your site-admin.--></p>
 <p><a class="glightbox" href="../img/dashboard.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="dashboard" src="../img/dashboard.png" /></a></p>
+<p>SciCat offers now new features for viewing metadata as you like with adjustable columns. </p>
+<p><a class="glightbox" href="../img/dashboard_adjustableColumns_rk.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="dashboard_adjustableColumns" src="../img/dashboard_adjustableColumns_rk.png" /></a></p>
+<p>You can change the columns to be shown by chosing from the three right dots "Column setting" and select those you would like. You can also drag columns by hovering over dots that appear just next to the label, click and pull it where you want to place it, then release. </p>
+<p><a class="glightbox" href="../img/dashboard_optionsPerColumn.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="dashboard_newFeatures" src="../img/dashboard_optionsPerColumn.png" /></a></p>
+<p>You can</p>
+<ol>
+<li>sort columns (click on the name and pull)</li>
+<li>adjust width of columns (left block of dots)</li>
+<li>remove or add columns (selection from Column settings)</li>
+<li>invert order of display (click arrow next to the name)</li>
+<li>apply a filter directly on that dataset with various options ("contains", "equals", "startsWith", "endsWith", "empty", "notEmpty") and either add (+), or (||) and exclude (x) another filter.</li>
+</ol>
+<p><a class="glightbox" href="../img/dashboard_filterOnColumns.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Overall Menu" src="../img/dashboard_filterOnColumns.png" /></a></p>
 <h2 id="menu-access-to-different-information-pages">Menu access to different information pages</h2>
 <p>You can always navigate to other parts of the application, simply by clicking on the user icon on the top right corner </p>
 <p><a class="glightbox" href="../img/menu_dropdown.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Overall Menu" src="../img/menu_dropdown.png" /></a></p>
 <h2 id="finding-datasets">Finding Datasets</h2>
-<p>SciCat provides several possibilities for finding the right datasets. One can use the tob search bar, one can narrow down your selection by applying filters and/or conditions and the user can search on his scientific metadata as well.</p>
+<p>SciCat provides several possibilities for finding the right datasets. You can use the top search bar, you can narrow down your selection by applying filters and/or conditions and the user can search on scientific metadata as well.</p>
 <h3 id="using-filters-and-conditions">Using Filters and Conditions</h3>
-<p>On the left one can apply most common filters. Currently there are</p>
+<p>On the left you can apply most common filters. Currently there are</p>
 <ol>
 <li>Location: location of creation of the dataset.</li>
 <li>PID: Identifier of the dataset.</li>
@@ -915,14 +913,10 @@
 </ol>
 <p>The text fields provide an auto completion, which becomes visible as you type. </p>
 <p>You can click on the date calendar to select the start date and a second to select end date. Make sure you select 2 dates.</p>
-<p>One can configure the selection of filters and add specific <em>conditions</em>. An example shows two additional conditions added:
+<p>You can configure the selection of filters and add specific <em>conditions</em>. An example shows two additional conditions added:
 <a class="glightbox" href="../img/dashboard_filters.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="filters" src="../img/dashboard_filters.png" /></a></p>
-<h2 id="searching">Searching</h2>
-<p>The text field at the top of the navigation bar allows you to search the metadata for any word contained in the metadata (but not arbitrary substrings). The search starts automatically when to start to type in this textfield, so better type fast ;-) </p>
-<h2 id="configure-table-columns">Configure table columns</h2>
-<p>The cog wheel symbol on the top right allows to define the columns, that you want to see in the table</p>
 <h2 id="view-details">View Details</h2>
-<p>To view a dataset simply click on it in the table and a more detailed view will load (this is covered in the next section)</p>
+<p>To view a dataset simply click on it in the table and a more detailed view will load (this is covered in the datasets section)</p>
 
 
 
