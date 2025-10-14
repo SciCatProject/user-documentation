@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../custom.css">
+      <link rel="stylesheet" href="../css/custom.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +67,12 @@
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,6 +90,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -91,8 +103,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,8 +127,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -186,8 +197,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     SciCat Documentation
@@ -897,48 +907,48 @@
                   
 
 
-<h1 id="welcome-to-scicat-operators-guide">Welcome to SciCat Operator's Guide</h1>
-<h2 id="overview">Overview</h2>
+<h1 id="welcome-to-scicat-operators-guide">Welcome to SciCat Operator's Guide<a class="headerlink" href="#welcome-to-scicat-operators-guide" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>SciCat is a flexible metadata catalogue designed to be easily interfaced in to most existing infrastructure. The following guide will introduce the configuration required to integrate SciCat into common technologies.</p>
 <p>How to ingest metadata, set SciCat up to deploy it is best covered by understanding its core systems, backend and frontend, its features, configurations, and what else one could do to fully exploit all of SciCat's capabilities.</p>
 <p>SciCat consists of a backend application, that is connected to the database - a MongoDB - and a frontend client exposing database content through a GUI to a user. At large scale facilities SciCat handles about 30 PB of data. </p>
-<h2 id="features">Features</h2>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <p>SciCat covers these core aspects in a flexible way:</p>
 <ol>
 <li>Searchable metadata fields, most common and highly specific ones. SciCat was developed by the PaNoSc community and has been successfully used more widely. This is because SciCat is highly configurable.</li>
 <li>Provision of unique persistent identifiers not only for the internal catalogue, but also connecting to the global DOI system through e.g. ready pathway to publication via <a href="https://datacite.org/">DataCite</a>. </li>
 </ol>
 <p>SciCat is an open source project can can be developed in accordance with our (license)[https://github.com/SciCatProject/scicat-backend-next?tab=BSD-3-Clause-1-ov-file#readme].</p>
-<h2 id="up-to-date-operators-information">Up-to-date operator's information</h2>
+<h2 id="up-to-date-operators-information">Up-to-date operator's information<a class="headerlink" href="#up-to-date-operators-information" title="Permanent link">&para;</a></h2>
 <p>Generally, the <a href="https://www.scicatproject.org/scicatlive/latest/"><strong>scicatlive</strong></a> documentation contains an up-to-date information how to set up and run the system <code>SciCat</code> interfacing it with various external, site-specific services. For troublshooting issues, please refer <a href="../troubleshoot/">the User's Guide</a>.</p>
-<h2 id="backend">Backend</h2>
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
 <p>At the heart of the SciCat architecture there is the <strong>REST API server</strong>. This is a NodeJS application that uses the nestjs framework to generate RESTful APIs from JSON files that define these models Users, Datasets, Instruments, Proposals and Instruments. Following the Swagger/OpenAPI format SDKs can be generated in almost any language. You can explore the backend APIs directly via the <a href="../swagger/">Swagger</a> interface.</p>
 <p>The persistence layer behind this API server is a <strong>MongoDB</strong> instance, i.e an open source, NoSQL, document-based database solution. The API server handles all the bi-directional communication from the REST interface to the database.</p>
 <p>These two components together comprise the "backend" of the architecture.</p>
-<h3 id="configuration-of-the-backend">Configuration of the backend</h3>
+<h3 id="configuration-of-the-backend">Configuration of the backend<a class="headerlink" href="#configuration-of-the-backend" title="Permanent link">&para;</a></h3>
 <p>There is one central place where one has a handle on how the backend is configured in SciCat: the <a href="../backendconfig/">dotenv</a> file.</p>
-<h3 id="example-how-to-integrate-to-oidc-using-keycloak">Example: How to integrate to OIDC using keycloak</h3>
+<h3 id="example-how-to-integrate-to-oidc-using-keycloak">Example: How to integrate to OIDC using keycloak<a class="headerlink" href="#example-how-to-integrate-to-oidc-using-keycloak" title="Permanent link">&para;</a></h3>
 <p>Integration with an identity provider, Keycloak, can be done using Open ID Connect, a protocol for authentication.
 See <a href="https://www.scicatproject.org/scicatlive/latest/services/backend/services/keycloak/">scicatlive manual</a> for more information on integration setup in SciCat backend.</p>
-<h2 id="frontend">Frontend</h2>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
 <p>To the REST server an arbitrary number of "clients" (frontends) can be connected. One of the most important clients is the web based GUI frontend. This allows to communicate with the data catalog in a user friendly way. It is based on the Angular (9+) technology and uses ngrx to communicate with the SciCat API and provide a searchable interface for datasets, as well as the option to carry out actions (i.e. archiving).</p>
 <p>In addition to the GUI other clients exist, such as command line (CLI) clients (example exist written in GO and Python) or desktop based GUI applications based on Qt. The CLI tools are especially useful for automated workflows, e.g. to get the data into the data catalog. This process is termed "ingestion" of the data. But they can also be used to add the data manually, especially for derived data, since this part of the workflow is often not possible to automate, in particular in truly experimental setups.</p>
-<h3 id="configuration-of-the-frontend">Configuration of the frontend</h3>
+<h3 id="configuration-of-the-frontend">Configuration of the frontend<a class="headerlink" href="#configuration-of-the-frontend" title="Permanent link">&para;</a></h3>
 <p>To start a local instance of the frontend follow the recipe: install requirements, esp. angular, git clone the <a href="https://github.com/SciCatProject/frontend">code</a>, go the the directory and run "npm run start". Then you can launch it by entering "localhost:4200".</p>
-<h3 id="how-to-include-site-specific-logos">How to include site-specific logos</h3>
+<h3 id="how-to-include-site-specific-logos">How to include site-specific logos<a class="headerlink" href="#how-to-include-site-specific-logos" title="Permanent link">&para;</a></h3>
 <p>See <a href="https://github.com/SciCatProject/frontend/blob/master/SITE-LOGO-CONFIGURATION.md">here</a> for example procedure how to include your logo.</p>
-<h3 id="messaging-infractructure">Messaging infractructure</h3>
+<h3 id="messaging-infractructure">Messaging infractructure<a class="headerlink" href="#messaging-infractructure" title="Permanent link">&para;</a></h3>
 <p>SciCat strength is to intergrate into almost any existing infrastructure because <strong>messaging systems</strong> can be easily interfaced to SciCat that take over the communication to other services and systems.</p>
 <p>A detailed description of jobs in for the new backend can be found <a href="https://github.com/SciCatProject/documentation/blob/master/Development/v4.x/backend/configuration/jobconfig.md">here</a>.</p>
-<h3 id="different-entry-points-to-scicat">Different entry points to SciCat</h3>
+<h3 id="different-entry-points-to-scicat">Different entry points to SciCat<a class="headerlink" href="#different-entry-points-to-scicat" title="Permanent link">&para;</a></h3>
 <p>One can ususally see SciCat datasets that is the metadata of data taken. It will be possible to sort according to samples, proposals, instruments and published data. Integration and generalisation of these entry points to the catalogue is currently in development. Another strength of SciCat is that it provides a publishing server.</p>
-<h4 id="publishing-server">Publishing Server</h4>
+<h4 id="publishing-server">Publishing Server<a class="headerlink" href="#publishing-server" title="Permanent link">&para;</a></h4>
 <p>In order to publish data you need to run a landing page server and you need to assign DOIs to your published data. Since the API server may be operated in an intranet, with no access to the internet the following architecture was chosen at PSI:</p>
 <p>An OAI-PMH server is running in a DMZ connected to a local Mongo instance. At publication time the data from SciCat is pushed to the external OAI-PMH server. From this server the landing page server can fetch the information about the published data. Also external DOI systems connect to this OAI-PMH server to synchronize the data with the world wide DOI system.</p>
 <p>If a user wants to download the full datasets of the published data, the data is copied from the internal file server to a https file server (acting as a cache file server) , which subsequently allows anonymous download of the data.</p>
-<h3 id="underlying-infrastructure-of-scicat-as-a-service">Underlying Infrastructure of SciCat as a Service</h3>
+<h3 id="underlying-infrastructure-of-scicat-as-a-service">Underlying Infrastructure of SciCat as a Service<a class="headerlink" href="#underlying-infrastructure-of-scicat-as-a-service" title="Permanent link">&para;</a></h3>
 <p>You may or may not run the infrastructure as part of a Kubernetes cluster. E.g. at PSI the API server, the GUI application, RabbitMQ and the Node-RED instances are all deployed to a Kubernetes cluster, whereas the Mongo DB ist kept outside Kubernetes. Kubernetes is not necessary to have, but can simplify operations. Likewise "helm charts" or similar tools for managing software applications as a service. <!--Also, the separation into internet and intranet zones can be defined as required -- OK HOW??. You can, of course, operate the whole infrastructure directly in internet accessible servers, if security policies permit.--></p>
-<h2 id="who-uses-scicat">Who uses SciCat?</h2>
+<h2 id="who-uses-scicat">Who uses SciCat?<a class="headerlink" href="#who-uses-scicat" title="Permanent link">&para;</a></h2>
 <p>Traditionally there were PSI, ESS and MaxIV that developed and deploy SciCat. More institutions joined the efforts and have pushed its development and many deploy photon and neutron labs in Europe and world-wide, see our project's for <a href="https://www.scicatproject.org/#facilities">all facilities</a>, contributors and users of SciCat.</p>
 <p>Below is a list of their documentation with more details on their deployment.</p>
 <ul>
@@ -996,7 +1006,7 @@ See <a href="https://www.scicatproject.org/scicatlive/latest/services/backend/se
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>

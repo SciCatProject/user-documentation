@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../custom.css">
+      <link rel="stylesheet" href="../css/custom.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +67,12 @@
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,6 +90,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -91,8 +103,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,8 +127,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -186,8 +197,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     SciCat Documentation
@@ -847,18 +857,18 @@
                   
 
 
-<h1 id="trouble-shooting">Trouble shooting</h1>
+<h1 id="trouble-shooting">Trouble shooting<a class="headerlink" href="#trouble-shooting" title="Permanent link">&para;</a></h1>
 <p>When using SciCat it is possible you encounter unexpected things. Here is a list of what we had.</p>
-<h2 id="1-no-images-visible">#1 No images visible</h2>
+<h2 id="1-no-images-visible">#1 No images visible<a class="headerlink" href="#1-no-images-visible" title="Permanent link">&para;</a></h2>
 <p>Despite a working set up, sometimes no images are visible. The GUI may look like that:
 <a class="glightbox" href="img/ts_noimages.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="broken page has no images" src="img/ts_noimages.png" /></a></p>
 <p>This may to be related to the site-specific setup. Check with your site-administrator or  github issues. Indeed there was a bug in the release, a new version fixed it.</p>
-<h2 id="2-adminingestor-login-behaved-differently">#2 Admin/Ingestor login behaved differently</h2>
+<h2 id="2-adminingestor-login-behaved-differently">#2 Admin/Ingestor login behaved differently<a class="headerlink" href="#2-adminingestor-login-behaved-differently" title="Permanent link">&para;</a></h2>
 <p><strong>Cause</strong> emails in functionalAccounts.json can not be twice the same.</p>
 <p><code>db.getCollection("User").drop():</code></p>
 <p>delete <em>User table</em> </p>
 <p>fix by deleting the dublicate and relaunch backend at restart. </p>
-<h2 id="3-scicat-complains-about-non-standard-pid">#3 SciCat complains about non-standard PID</h2>
+<h2 id="3-scicat-complains-about-non-standard-pid">#3 SciCat complains about non-standard PID<a class="headerlink" href="#3-scicat-complains-about-non-standard-pid" title="Permanent link">&para;</a></h2>
 <p>error message when trying an ingest of a dataset:</p>
 <p><code>Datasets": [], "usedSoftware": [], "relationships": []}
 Scicat returned 400 Bad Request: PID is not following required standards
@@ -910,7 +920,7 @@ Scicat returned 400 Bad Request: PID is not following required standards
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>

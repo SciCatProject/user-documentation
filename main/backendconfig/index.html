@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../custom.css">
+      <link rel="stylesheet" href="../css/custom.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +67,12 @@
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,6 +90,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -91,8 +103,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,8 +127,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -186,8 +197,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     SciCat Documentation
@@ -895,7 +905,7 @@
                   
 
 
-<h1 id="central-configuration-of-backend-env">Central Configuration of Backend: <code>.env</code></h1>
+<h1 id="central-configuration-of-backend-env">Central Configuration of Backend: <code>.env</code><a class="headerlink" href="#central-configuration-of-backend-env" title="Permanent link">&para;</a></h1>
 <p>The configuration file <code>.env</code> allows the systems administrator to configure connected services, like authentication services and message queues, and also switching on/off almost all available features and is read by the backend at runtime.</p>
 <p>There are currently many configurable additions to SciCat which makes it very flexible these are:</p>
 <ul>
@@ -905,7 +915,7 @@
 <li>SMTP for sending emails to notify users of SciCat jobs</li>
 <li>AMQP to provide a message queue for the jobs</li>
 </ul>
-<h2 id="environment-variables">Environment Variables</h2>
+<h2 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
 <p>All environment variables can be used in the <code>.env</code> filee. The current source code contains an example .env file, named <em>.env.example</em>, listing all (79) environment variables available to configure the backend. They can be found <a href="https://github.com/SciCatProject/scicat-backend-next/blob/master/.env.example">here</a> and define</p>
 <ul>
 <li>How SciCat handles access rights and connects to other services e.g. to identity providers - such as LDAP or OIDC for authentication.</li>
@@ -1377,8 +1387,8 @@
 <em>format</em>: string  </p>
 </li>
 </ul>
-<h2 id="environment-variables-as-now">Environment Variables as now</h2>
-<pre><code>ACCESS_GROUP_SERVICE_API_URL=&quot;&quot;
+<h2 id="environment-variables-as-now">Environment Variables as now<a class="headerlink" href="#environment-variables-as-now" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>ACCESS_GROUP_SERVICE_API_URL=&quot;&quot;
 ACCESS_GROUP_SERVICE_TOKEN=&quot;&quot;
 DOI_PREFIX=&quot;&lt;DOI_PREFIX&gt;&quot;
 EXPRESS_SESSION_SECRET=&quot;&lt;EXPRESS_SESSION_SECRET&gt;&quot;
@@ -1464,12 +1474,12 @@ ES_REFRESH=&lt;&quot;wait_for&quot;|&quot;false&quot;&gt;
 LOGGERS_CONFIG_FILE=&quot;loggers.json&quot;
 DATASET_TYPES_FILE=&quot;datasetTypes.json&quot;
 PROPOSAL_TYPES_FILE=&quot;proposalTypes.json&quot;
-</code></pre>
-<h3 id="how-to-configure-to-connect-the-backend-to-other-services">How to configure to connect the backend to other services</h3>
+</code></pre></div>
+<h3 id="how-to-configure-to-connect-the-backend-to-other-services">How to configure to connect the backend to other services<a class="headerlink" href="#how-to-configure-to-connect-the-backend-to-other-services" title="Permanent link">&para;</a></h3>
 <p>In <a href="https://www.scicatproject.org/scicatlive/latest/services/backend/">scicatlive</a> you find documentation on how to integrate your SciCat system with services providing identities, (e.g. KeyCloak) and authentication (OpenLDAP).</p>
-<h3 id="how-to-configure-doi-minting">How to configure DOI minting</h3>
+<h3 id="how-to-configure-doi-minting">How to configure DOI minting<a class="headerlink" href="#how-to-configure-doi-minting" title="Permanent link">&para;</a></h3>
 <p>In SciCat one can publish selected datasets that triggers a DOI minting process. Find <a href="../datasets/Publishing/">here</a> a short introduction on SciCats Published Data class. Instructions how to configure this DOI minting service and in addition make datasets publicly via APIs follow <a href="dois/">this Link.</a></p>
-<h2 id="more-advanced-options">More advanced options</h2>
+<h2 id="more-advanced-options">More advanced options<a class="headerlink" href="#more-advanced-options" title="Permanent link">&para;</a></h2>
 <p>If you are compiling the application from source, you can edit the file <em>src/config/configuration.ts</em> with the correct values for your infrastructure. <strong>This option is still undocumented, although it is our intention to provide a detailed how-to guide as soon as we can.</strong></p>
 
 
@@ -1517,7 +1527,7 @@ PROPOSAL_TYPES_FILE=&quot;proposalTypes.json&quot;
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>

@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +67,12 @@
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,6 +90,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -91,8 +103,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,8 +127,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -186,8 +197,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     SciCat Documentation
@@ -879,7 +889,7 @@
                   
 
 
-<h1 id="dashboard">Dashboard</h1>
+<h1 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h1>
 <p>SciCat's Dashboard or also sometimes called Landing Page is the first page that you see independent of whether you are logged in or not. If you want to login click <em>Sign in</em> on the top right button, see <a href="../">here</a> for more information. When set to datasets as main access point, it will show an overview of all datasets that you have access to. If you do not login you see those that are public. <!--Soon it will be possible to obtain this overview page for the other objects such as proposals, samples, published data and instruments. This can be configured by your site-admin.--></p>
 <p><a class="glightbox" href="../img/dashboard.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="dashboard" src="../img/dashboard.png" /></a></p>
 <p>SciCat offers now new features for viewing metadata as you like with adjustable columns. </p>
@@ -895,12 +905,12 @@
 <li>apply a filter directly on that dataset with various options ("contains", "equals", "startsWith", "endsWith", "empty", "notEmpty") and either add (+), or (||) and exclude (x) another filter.</li>
 </ol>
 <p><a class="glightbox" href="../img/dashboard_filterOnColumns.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Overall Menu" src="../img/dashboard_filterOnColumns.png" /></a></p>
-<h2 id="menu-access-to-different-information-pages">Menu access to different information pages</h2>
+<h2 id="menu-access-to-different-information-pages">Menu access to different information pages<a class="headerlink" href="#menu-access-to-different-information-pages" title="Permanent link">&para;</a></h2>
 <p>You can always navigate to other parts of the application, simply by clicking on the user icon on the top right corner </p>
 <p><a class="glightbox" href="../img/menu_dropdown.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Overall Menu" src="../img/menu_dropdown.png" /></a></p>
-<h2 id="finding-datasets">Finding Datasets</h2>
+<h2 id="finding-datasets">Finding Datasets<a class="headerlink" href="#finding-datasets" title="Permanent link">&para;</a></h2>
 <p>SciCat provides several possibilities for finding the right datasets. You can use the top search bar, you can narrow down your selection by applying filters and/or conditions and the user can search on scientific metadata as well.</p>
-<h3 id="using-filters-and-conditions">Using Filters and Conditions</h3>
+<h3 id="using-filters-and-conditions">Using Filters and Conditions<a class="headerlink" href="#using-filters-and-conditions" title="Permanent link">&para;</a></h3>
 <p>On the left you can apply most common filters. Currently there are</p>
 <ol>
 <li>Location: location of creation of the dataset.</li>
@@ -915,7 +925,7 @@
 <p>You can click on the date calendar to select the start date and a second to select end date. Make sure you select 2 dates.</p>
 <p>You can configure the selection of filters and add specific <em>conditions</em>. An example shows two additional conditions added:
 <a class="glightbox" href="../img/dashboard_filters.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="filters" src="../img/dashboard_filters.png" /></a></p>
-<h2 id="view-details">View Details</h2>
+<h2 id="view-details">View Details<a class="headerlink" href="#view-details" title="Permanent link">&para;</a></h2>
 <p>To view a dataset simply click on it in the table and a more detailed view will load (this is covered in the datasets section)</p>
 
 
@@ -963,7 +973,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

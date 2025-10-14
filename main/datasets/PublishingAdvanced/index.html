@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +67,12 @@
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,6 +90,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -91,8 +103,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,8 +127,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -186,8 +197,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     SciCat Documentation
@@ -945,22 +955,22 @@
                   
 
 
-<h1 id="publishing-scicat-datasets-advanced">Publishing SciCat datasets Advanced</h1>
+<h1 id="publishing-scicat-datasets-advanced">Publishing SciCat datasets Advanced<a class="headerlink" href="#publishing-scicat-datasets-advanced" title="Permanent link">&para;</a></h1>
 <p>The previously described options to <a href="../Publishing/">publish datasets</a> in SciCat - the process of registration of a selection of datasets - is here outlined in a more technical way.</p>
-<h2 id="implementation-workflow-target">Implementation workflow target</h2>
+<h2 id="implementation-workflow-target">Implementation workflow target<a class="headerlink" href="#implementation-workflow-target" title="Permanent link">&para;</a></h2>
 <p>Please note only metadata is stored in SciCat, there is no direct coupling between the software and the storage system. If you wish to publish both the metadata and data, please speak to your operator or consult the developer documentation for examples.</p>
-<h3 id="1-create-a-list-of-selected-datasets">1. Create a list of selected datasets</h3>
+<h3 id="1-create-a-list-of-selected-datasets">1. Create a list of selected datasets<a class="headerlink" href="#1-create-a-list-of-selected-datasets" title="Permanent link">&para;</a></h3>
 <p>You can select datasets to create a <strong>dataset list</strong>; more datasets can be added and removed in several sessions. You can cancel the process at any time. New will be that while examining single datasets he can directly add or remove them to or from the selection in the cart. Before proceeding, you will be asked to verify the selection of datasets. You as user have finalized the dataset selection for which you want to register the dataset with a DOI.</p>
-<h5 id="internal-review-to-be-implemented">Internal review (to be implemented)</h5>
+<h5 id="internal-review-to-be-implemented">Internal review (to be implemented)<a class="headerlink" href="#internal-review-to-be-implemented" title="Permanent link">&para;</a></h5>
 <p>Some institutions may introduce an internal review step at this point: other authenticated user (as part of a dedicated reviewer-group) review the selected datasets. If OK, proceed to next form and the initial you can continue the DOI minting process.</p>
-<h3 id="2-fill-the-form-for-this-dataset-selection">2. Fill the form for this dataset selection</h3>
+<h3 id="2-fill-the-form-for-this-dataset-selection">2. Fill the form for this dataset selection<a class="headerlink" href="#2-fill-the-form-for-this-dataset-selection" title="Permanent link">&para;</a></h3>
 <p>You will be forwarded to a form where you provide <strong>metadata specific to this selection</strong> already conform to DataCite metadata fields to match site specific information about e.g. grants, associated projects, etc. All selected datasets will be made public. Owners (and Admins) are allowed to update this form. Again, this shall be possible within several sessions.</p>
-<h3 id="3-publish-the-selection">3. Publish the selection</h3>
+<h3 id="3-publish-the-selection">3. Publish the selection<a class="headerlink" href="#3-publish-the-selection" title="Permanent link">&para;</a></h3>
 <p>After hitting button all selected datasets become publicly visible: not only the owner can view all the metadata of the data, date of creation, associated files names, location, PI, etc. This is <strong>prerequisite</strong> for DOI registration.  </p>
-<h3 id="4-doi-registration">4. DOI registration</h3>
+<h3 id="4-doi-registration">4. DOI registration<a class="headerlink" href="#4-doi-registration" title="Permanent link">&para;</a></h3>
 <p>Before hitting the registration button the data selection does have an "internal" DOI which is an unregistered DOI clearly indicated by the state of this registration request.
 When hitting the button register all the meta data will be forwarded to DOI provider DataCite if configured, see <a href="../../backendconfig/dois/">backend config</a>. For quality control your site may run in between an external service before forwarding the request. <em>Pending request</em> is indicated until the request if forwarded to DataCite. Note, from then on no more changes are possible for the requester. The concept of DOIs is to never change the metadata/data of the DOI.</p>
-<h3 id="5-for-admins-only">5. For Admins only</h3>
+<h3 id="5-for-admins-only">5. For Admins only<a class="headerlink" href="#5-for-admins-only" title="Permanent link">&para;</a></h3>
 <p>In extremely rare cases and only if justified, i.e. in case of great errors an update can be made by admins only.</p>
 <p><a class="glightbox" href="../img/published_data_workflow_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="workflow diagram" src="../img/published_data_workflow_1.png" /></a></p>
 
@@ -1009,7 +1019,7 @@ When hitting the button register all the meta data will be forwarded to DOI prov
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>

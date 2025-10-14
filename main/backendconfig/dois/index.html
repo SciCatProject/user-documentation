@@ -26,6 +26,9 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -43,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +67,12 @@
     body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -82,6 +90,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -91,8 +103,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -116,8 +127,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -186,8 +197,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
 
     </a>
     SciCat Documentation
@@ -979,10 +989,10 @@
                   
 
 
-<h1 id="doi-minting-in-scicat-how-to-set-up-publication-of-datasets">DOI minting in SciCat - How to set up publication of datasets</h1>
-<h2 id="introduction">Introduction</h2>
+<h1 id="doi-minting-in-scicat-how-to-set-up-publication-of-datasets">DOI minting in SciCat - How to set up publication of datasets<a class="headerlink" href="#doi-minting-in-scicat-how-to-set-up-publication-of-datasets" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>User introduction can be found <a href="../../datasets/Publishing/">here</a>.</p>
-<h2 id="variables-to-configure">Variables to configure</h2>
+<h2 id="variables-to-configure">Variables to configure<a class="headerlink" href="#variables-to-configure" title="Permanent link">&para;</a></h2>
 <p>We repeat here the relevant parts from the <a href="../#environment-variables"><code>.env</code>-file</a> that essentially give handle to the admin-user:</p>
 <ul>
 <li>REGISTER_DOI_URI="https://mds.test.datacite.org/doi"</li>
@@ -991,22 +1001,22 @@
 <li>DOI_PASSWORD="password"</li>
 </ul>
 <p>The up to now main landing page server as separate frontend client will become redundant: other than datasets can be chosen as entry points to benefit from the nice search on datasets, one can simply use also the publishedData main page as entry point for displaying all externaly accessible DOIs.</p>
-<h2 id="full-potential-with-scicats-apis">Full potential with SciCat's APIs</h2>
+<h2 id="full-potential-with-scicats-apis">Full potential with SciCat's APIs<a class="headerlink" href="#full-potential-with-scicats-apis" title="Permanent link">&para;</a></h2>
 <p>The respective endpoints can be viewed from swagger and are</p>
 <p>List of API endpoints one can access:
 <a class="glightbox" href="../../swagger/img/swagger_publishedData.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="swagger screenshot" src="../../swagger/img/swagger_publishedData.png" /></a></p>
-<h3 id="endpoints">Endpoints</h3>
-<h4 id="post">post</h4>
+<h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h3>
+<h4 id="post">post<a class="headerlink" href="#post" title="Permanent link">&para;</a></h4>
 <p>Main one is to the post object:</p>
 <p><a class="glightbox" href="../../swagger/img/swagger_publishedData_post.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="post" src="../../swagger/img/swagger_publishedData_post.png" /></a></p>
 <p>Others are</p>
-<h4 id="count">count</h4>
+<h4 id="count">count<a class="headerlink" href="#count" title="Permanent link">&para;</a></h4>
 <p><a class="glightbox" href="../../swagger/img/swagger_publishedData_count.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="count" src="../../swagger/img/swagger_publishedData_count.png" /></a></p>
-<h4 id="register">register</h4>
+<h4 id="register">register<a class="headerlink" href="#register" title="Permanent link">&para;</a></h4>
 <p><a class="glightbox" href="../../swagger/img/swagger_publishedData_register.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="register" src="../../swagger/img/swagger_publishedData_register.png" /></a></p>
-<h4 id="form-populate">form populate</h4>
+<h4 id="form-populate">form populate<a class="headerlink" href="#form-populate" title="Permanent link">&para;</a></h4>
 <p><a class="glightbox" href="../../swagger/img/swagger_publishedData_formpopulate.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="form populate" src="../../swagger/img/swagger_publishedData_formpopulate.png" /></a></p>
-<h4 id="resync">resync</h4>
+<h4 id="resync">resync<a class="headerlink" href="#resync" title="Permanent link">&para;</a></h4>
 <p><a class="glightbox" href="../../swagger/img/swagger_publishedData_resync.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="resync" src="../../swagger/img/swagger_publishedData_resync.png" /></a></p>
 
 
@@ -1054,7 +1064,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
