@@ -8,12 +8,14 @@ nav:
     - Login:
       - login/index.md
       - Anonymous: login/Anonymous.md
-      - Dashboard: login/Dashboard.md
     - Datasets:
       - datasets/index.md
       - Publishing data: datasets/Publishing.md
       - Publishing data Advanced: datasets/PublishingAdvanced.md
-      - Data Retrieval: datasets/jobs.md 
+      - Data Retrieval: datasets/jobs.md
+      - Dashboard: 
+        - Search and Filter: datasets/DashboardDatasetsFiltering.md
+        - Configure Dataset Table: datasets/dashboardTableEditing.md
     - Proposals: 
       - proposals/index.md
     - Samples: samples/index.md
