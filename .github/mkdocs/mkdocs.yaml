@@ -1,42 +1,34 @@
+INHERIT: mkdocs-default.yml
 site_name: SciCat Documentation
-docs_dir: ../../docs
-
 
 nav: 
   - Home: index.md
   - SciCat User Guide:  
-    - user-manual/index.md
+    - user-guide/index.md
     - Login:
       - login/index.md
       - Anonymous: login/Anonymous.md
       - Dashboard: login/Dashboard.md
     - Datasets:
       - datasets/index.md
-      - Register DOIs: datasets/Publishing.md
-    - Proposals: proposals.md
-    - Samples: samples.md
-    - Instruments: instruments.md
+      - Publishing data: datasets/Publishing.md
+      - Publishing data Advanced: datasets/PublishingAdvanced.md
+      - Data Retrieval: datasets/jobs.md 
+    - Proposals: 
+      - proposals/index.md
+    - Samples: samples/index.md
+    - Instruments: instruments/index.md
     - Troubleshooting:
       - troubleshoot/index.md
   
   - SciCat Operator Guide: 
-    - operator-manual/index.md
-    - sites/DESY/index.md
+    - operator-guide/index.md
     - swagger/index.md
     - backendconfig/index.md
+    - backendconfig/authorization/index.md
     - backendconfig/dois.md
+    - frontendconfig/index.md
     
 
   - About:
       - about/index.md
-
-theme: material 
-
-plugins:
-  - search
-  - glightbox
-  - section-index
-
-
-extra_css:
-  - custom.css

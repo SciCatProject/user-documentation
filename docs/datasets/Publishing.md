@@ -1,6 +1,9 @@
-# Publishing datasets
+# Publishing SciCat datasets 
 
-There are two ways of _publishing_ datasets in SciCat, one via the "publish button" for each dataset, and secondly when adding to it to a selection of datasets for which a DOI is registered.
+There are two ways of _publishing_ datasets in SciCat via the GUI: one using the "publish button" for each dataset, and the other when registering a selection of datasets for a DOI according to DataCite standards. The first step is included in the second one. 
+If you want a more advanced option for full exploitation of the available endpoints of SciCat, see [here](../backendconfig/dois.md).
+
+A more technical description of the workflow can be found [here](PublishingAdvanced.md).
 
 ## Publish without DOI registration
 
@@ -10,13 +13,13 @@ Each dataset has this button on the top right.
 
 ## Publish with DOI registeration
 
-The user can select one or several datasets for DOI (**Digital Object Identifier**) registration which means that a record in DataCite, a DOI provider, will be made that points to a DESY landing page. SciCat offers a DataCite conform schema during the workflow. Any data that is known to the data catalog can be published. The publication workflow does the following:
+The user can select one or several datasets for DOI (**Digital Object Identifier**) registration producing a record in DataCite, a DOI provider, pointing to a local detailed landing page. SciCat offers a DataCite conform schema during the workflow. Any data that is known to the data catalog can be published and the publication workflow goes as follows:
 
 1. The logged in user can define a **set** of datasets to be published.
-2. That person assigns metadata relevant to the publication of the datasets, such as title, author (currently the name(s) under 'Creator'), abstract etc. One can work on it at a later stage, too and re-edit the registration. Note, that editing will be allowed once the registration request has been sent.
+2. That user assigns metadata relevant to the publication of the datasets, such as title, author (currently the name(s) under 'Creator'), abstract etc. One can work on it at a later stage, too and re-edit the registration. Note, that **no** editing will be allowed once the registration request has been sent.
 3. A DOI is assigned to the published data which can e.g. be used to link from a journal article to the data.
-4. It makes the data publicly available by providing a _landing page_ that describes the data.
-5. It publishes the DOI to the worldwide DOI system , e.g. from Datacite
+4. It makes the data publicly available by providing a detailed _landing page_ that describes the data.
+5. It publishes the DOI to the worldwide DOI system from Datacite.
 
 
 So the first step is to **select the datasets** that should be published:
@@ -43,8 +46,7 @@ Once this is finished one can hit the "register" button (not shown in previous s
 
 ![Landing page of published data](img/landingpage.png)
 
-Finally you can have a look at all the published data by going to the Published Data menu item (again by clicking the user icon at the top right corner and choosing "Published Data"):
+Finally you can have a look at all the published data by going to the Published Data menu item: by clicking the user icon at the top right corner and choosing "Published Data":
 
 ![Landing page of published data](img/published_datasets.png)
 
-This [short video](https://scicatproject.github.io/img/attach_and_publish.mp4) demonstrates how you can add an attachment to your dataset and publish the data.

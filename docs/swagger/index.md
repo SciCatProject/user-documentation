@@ -1,4 +1,4 @@
-# Swagger or Explorer - The Backend API
+# Swagger - explore the Backend API
 
 If SciCat has been set up and runs, one has direct access to the backend through the APIs via the Swagger tool or Explorer interface. Often, you can simply extend the ```url``` by ```/explorer```, e.g. ```https://myscicat.mydomain.de/explorer```. You will see a list of all APIs of that instance.
 
