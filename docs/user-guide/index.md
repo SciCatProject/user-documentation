@@ -1,22 +1,11 @@
 # Welcome to SciCat Users Guide
 
-Metadata management has become a vital aspect in all scientific domains dealing with large and lots of data acquisition, even for a single university lab proper metadata handling is vital for international excellence. Scicat is a scientific metadata catalogue, that is built to accompany each step of a data life cycle, from proposal to publication, in a FAIR way. Data can be findable, accessible, interoperable and reusable.
+Scicat, a scientific metadata catalogue, allows you to explore your datasets through their metadata. SciCat has mechanisms to interact with the related datasets through its flexible integration with most storage systems.
 
-Therefore SciCat is organised around these five main classes:
-1. [Datasets](../datasets/index.md): Main and most elaborated object in SciCat, can have associated datafiles organised in data blocks and other attachments like images or PDFs.
-2. [Proposals](../proposals.md): are generally used to link datasets to the proposal under which beamtime was granted.
-3. [Instruments](../instruments.md): Instruments is a library of instruments available at your institute, which can be linked to datasets.
-4. [Samples](../samples.md): Here you can add metadata describing a physical sample which can be linked to it’s experimental use captured in datasets. 
-5. [PublishedData](../datasets/Publishing.md)
-It allows you to explore your datasets through their metadata. SciCat has mechanisms to interact with the related datasets through its flexible integration with most storage systems.
+SciCat is a data management tool accompanying some critical steps during the entire data life cycle which are: getting an overview of datasets for data analysis, for re-analysis, for publishing datasets, and in particular for publication. 
 
+Advantages of SciCat:
 
-Key features of SciCat
-* Flexible components in SciCat enable flexible configuration of site-specific systems. 
-* Free format of scientific meta data definitions
-* Relationships class enables relation of data, its proposal, instruments, samples and published data records. 
-* Fine-grained history enables tracking of any changes to detailed
-* 
 * It can be integrated to almost any other service that has REST APIs. Therefore, site-specific applications can be easily integrated. 
 * The Data Model of SciCat forsees a schemaless fields for quite different use cases. This concept has been implemented for the main class, Datasets, but is extended to function in the same way for the other classes e.g. Proposlas, Samples, Intstruments and Published Data.
 * Its components are based on OpenSource software projects and state of the art technologies using MongoDB as backbone database, nestjs as backend basis. 
@@ -29,6 +18,10 @@ More detailed information on how to run scicat, see [scicatlive documentation](h
 ## How to use SciCat
 Once metadata is ingested into SciCat, the user can login and view, edit the metadata, list, filter and make a selection of interesting datasets using also scientific metadata. There are four main areas of SciCat where metadata can be explored:
 
+1. [Datasets](../datasets/index.md): Metadata in SciCat is ideally sorted according to a dataset. It can have several associated files attached which have the same metadata like a thumbnail or most common image files.
+2. [Proposals](../proposals.md): are used to link datasets to the proposal under which beamtime was granted.
+3. [Instruments](../instruments.md): Instruments is a library of instruments available at your institute, which can be linked to datasets.
+4. [Samples](../samples.md): Here you can add metadata describing a physical sample which can be linked to it’s experimental use captured in datasets. 
 
 For many the SciCat datasets are the entry point to the catalogue, but soon it will be possible to start with samples or published data records (registered metadata sets).
 You can just browse what's in the catalogue for any published datasets. Else one can list all datasets that I either own or have access to. Here is how to find more on how to proceed:
