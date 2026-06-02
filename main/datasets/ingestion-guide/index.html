@@ -1,0 +1,1336 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Dataset Ingestion Guide - SciCat Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dataset-ingestion-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SciCat Documentation" class="md-header__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
+      
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SciCat Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dataset Ingestion Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SciCat Documentation" class="md-nav__button md-logo" aria-label="SciCat Documentation" data-md-component="logo">
+      
+  <img src="../../assets/SciCat-logo-icon.png" alt="logo">
+
+    </a>
+    SciCat Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SciCat User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SciCat User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Login
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Login
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../login/Anonymous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anonymous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Datasets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Publishing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publishing data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PublishingAdvanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publishing data Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Retrieval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DashboardDatasetsFiltering.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search and Filter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboardTableEditing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure Dataset Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proposals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Samples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instruments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instruments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshoot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SciCat Operator Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SciCat Operator Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../swagger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Swagger - explore the Backend API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backendconfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central Configuration of Backend: .env
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backendconfig/authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backendconfig/dois/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOI minting in SciCat - How to set up publication of datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontendconfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#the-curl-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The CURL command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The CURL command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-get-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple GET request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-identifiers-of-origdatablocks-oids-of-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET identifiers of origdatablocks (OIDs) of a dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-datafiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding datafiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-attachments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding attachments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythonic-way-python-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pythonic way: python sdk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythonic-way-pyscicat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pythonic way: pyscicat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pythonic-way-sciteacean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pythonic way: sciteacean
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dataset-ingestion-guide">Dataset Ingestion Guide<a class="headerlink" href="#dataset-ingestion-guide" title="Permanent link">¶</a></h1>
+<p>Once you have your database, the SciCat API server up and running, several options of ingesting a dataset into SciCat exist - ranging from quick, one-time ingestion via CURL (not recommended) to a fully automized ingestion setup using python software for SciCat API access based on <a href="[https://pydantic.dev/docs/validation/latest/concepts/models/]"><code>pydantic</code></a> (a python validation class to ensure valid formats) for example <a href="https://www.scicatproject.org/pyscicat/"><code>pyscicat</code></a> or SciCat's <code>python-sdk</code>.</p>
+<p>Another example that uses Jupyter Notebook in SciCatLive can be found <a href="[https://github.com/SciCatProject/scicatlive/blob/main/services/jupyter/config/notebooks/pyscicat.ipynb">here</a> which includes how to authenticate, create a dataset, add datablocks and upload an attachement.</p>
+<h2 id="the-curl-command">The <code>CURL</code> command<a class="headerlink" href="#the-curl-command" title="Permanent link">¶</a></h2>
+<p>The highest chance to make a successful request to one of SciCats endpoints is to learn from Swagger. Browse to see  the syntax formation, obtain a valid token via the auth login or through looking at the Users endpoint in settings on the frontend, provide the correct fields ensuring you exclude the forbidden fields. In the following we give a skeleton for examples.</p>
+<h3 id="simple-get-request">Simple GET request<a class="headerlink" href="#simple-get-request" title="Permanent link">¶</a></h3>
+<p>with a known <code>pid</code> as authenticated user (replace placeholders)</p>
+<p></p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s2">"GET"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"http://"</span><span class="si">${</span><span class="nv">URL</span><span class="si">}</span><span class="s2">"/api/v4/datasets/</span><span class="si">${</span><span class="nv">pid</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"accept: application/json"</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Authentication: Bearer "${TOKEN}"'</span>
+</code></pre></div>
+If you are only interested in public records , you will not need to authenticate so repeat the command without the last line <code>-H Authentication: Bearer "${TOKEN}"</code>.<p></p>
+<h3 id="get-identifiers-of-origdatablocks-oids-of-a-dataset">GET identifiers of <code>origdatablocks</code> (OIDs) of a dataset<a class="headerlink" href="#get-identifiers-of-origdatablocks-oids-of-a-dataset" title="Permanent link">¶</a></h3>
+<p>The dataset is identified by its pid, we use v4 API and first define a filter</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">URL</span><span class="o">=</span><span class="s2">"valid_url"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TOKEN</span><span class="o">=</span><span class="s2">"valid_token"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">pid</span><span class="o">=</span><span class="s2">"example_pid"</span>
+
+<span class="c1"># -- GET the oids ------------------                                                                                                                     </span>
+<span class="nv">FILTER_JSON</span><span class="o">=</span><span class="s1">'{                                                                                                                                                                                                   </span>
+<span class="s1">  "where": { "pid": "'</span><span class="si">${</span><span class="nv">pid</span><span class="si">}</span><span class="s1">'" },                                                                                                                                                                                </span>
+<span class="s1">  "include": [                                                                                                                                                                                                   </span>
+<span class="s1">    {                                                                                                                                                                                                            </span>
+<span class="s1">      "relation": "origdatablocks",                                                                                                                                                                              </span>
+<span class="s1">      "scope": {                                                                                                                                                                                                 </span>
+<span class="s1">        "fields": ["_id"],                                                                                                                                                                                       </span>
+<span class="s1">        "limit": 20,                                                                                                                                                                                             </span>
+<span class="s1">        "order": "filename ASC"                                                                                                                                                                                  </span>
+<span class="s1">      }                                                                                                                                                                                                          </span>
+<span class="s1">    }                                                                                                                                                                                                            </span>
+<span class="s1">  ],                                                                                                                                                                                                             </span>
+<span class="s1">  "fields": ["datasetName"],                                                                                                                                                                                     </span>
+<span class="s1">  "limit": 10                                                                                                                                                                                                    </span>
+<span class="s1">}'</span>
+
+curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">URL</span><span class="si">}</span><span class="s2">/api/v4/datasets"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-urlencode<span class="w"> </span><span class="s2">"filter=</span><span class="si">${</span><span class="nv">FILTER_JSON</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Accept: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="si">${</span><span class="nv">TOKEN</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="create-a-dataset">Create a dataset<a class="headerlink" href="#create-a-dataset" title="Permanent link">¶</a></h3>
+<p>Make sure the json is formatted OK. Some fields are mandatory, you can check in swagger to see which fields are mandatory or not, see also <a href="../../swagger/#tips-and-tricks">swagger documentation</a>.
+</p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">'POST'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">'https://${URL}/api/v4/datasets'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'accept: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">  "ownerGroup": "string",</span>
+<span class="s1">  "accessGroups": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "instrumentGroup": "string",</span>
+<span class="s1">  "owner": "string",</span>
+<span class="s1">  "ownerEmail": "user@example.com",</span>
+<span class="s1">  "orcidOfOwner": "string",</span>
+<span class="s1">  "contactEmail": "string",</span>
+<span class="s1">  "sourceFolder": "string",</span>
+<span class="s1">  "sourceFolderHost": "string",</span>
+<span class="s1">  "size": 0,</span>
+<span class="s1">  "packedSize": 0,</span>
+<span class="s1">  "numberOfFiles": 0,</span>
+<span class="s1">  "numberOfFilesArchived": 0,</span>
+<span class="s1">  "creationTime": "2026-04-22T10:54:53.642Z",</span>
+<span class="s1">  "validationStatus": "string",</span>
+<span class="s1">  "keywords": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "description": "string",</span>
+<span class="s1">  "datasetName": "string",</span>
+<span class="s1">  "classification": "string",</span>
+<span class="s1">  "license": "string",</span>
+<span class="s1">  "isPublished": false,</span>
+<span class="s1">  "techniques": [],</span>
+<span class="s1">  "sharedWith": [],</span>
+<span class="s1">  "relationships": [],</span>
+<span class="s1">  "datasetlifecycle": {},</span>
+<span class="s1">  "scientificMetadata": {},</span>
+<span class="s1">  "scientificMetadataSchema": "string",</span>
+<span class="s1">  "scientificMetadataValid": true,</span>
+<span class="s1">  "comment": "string",</span>
+<span class="s1">  "dataQualityMetrics": 0,</span>
+<span class="s1">  "principalInvestigators": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "startTime": "2026-04-22T10:54:53.642Z",</span>
+<span class="s1">  "endTime": "2026-04-22T10:54:53.642Z",</span>
+<span class="s1">  "creationLocation": "string",</span>
+<span class="s1">  "dataFormat": "string",</span>
+<span class="s1">  "proposalIds": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "sampleIds": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "instrumentIds": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "inputDatasets": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "usedSoftware": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "jobParameters": {},</span>
+<span class="s1">  "jobLogData": "string",</span>
+<span class="s1">  "runNumber": "string",</span>
+<span class="s1">  "pid": "string",</span>
+<span class="s1">  "type": "string"</span>
+<span class="s1">}'</span>
+</code></pre></div>
+Note, that datafiles and attachments related to a SciCat dataset need to be POSTed separtely as they are a priori independent entities.<p></p>
+<h3 id="adding-datafiles">Adding datafiles<a class="headerlink" href="#adding-datafiles" title="Permanent link">¶</a></h3>
+<p>Associated datafiles are organised in datablocks. There are original datablocks (<code>origdatablocks</code>) and <code>datablocks</code>. The latter are obsolete and functionality has fully moved to <code>origdatablocks</code>. To attach your metadata of these associated datafiles to the dataset use e.g. <code>/api/v4/origdatablock</code>. Note, that the dataset to which the blocks belong are indicated by <code>dataasetId</code> which corresponds to the <code>pid</code> field of the dataset itself. This can be achieved by the following command (and placeholders replaced):</p>
+<p></p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">'POST'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">'http://localhost:3000/api/v4/origdatablocks'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'accept: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">  "ownerGroup": "string",</span>
+<span class="s1">  "accessGroups": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "instrumentGroup": "string",</span>
+<span class="s1">  "size": 0,</span>
+<span class="s1">  "chkAlg": "string",</span>
+<span class="s1">  "dataFileList": [</span>
+<span class="s1">    {</span>
+<span class="s1">      "path": "string",</span>
+<span class="s1">      "size": 0,</span>
+<span class="s1">      "time": "2026-04-22T11:28:56.870Z",</span>
+<span class="s1">      "chk": "string",</span>
+<span class="s1">      "uid": "string",</span>
+<span class="s1">      "gid": "string",</span>
+<span class="s1">      "perm": "string",</span>
+<span class="s1">      "type": "string"</span>
+<span class="s1">    }</span>
+<span class="s1">  ],</span>
+<span class="s1">  "isPublished": true,</span>
+<span class="s1">  "datasetId": "string"</span>
+<span class="s1">}'</span>
+</code></pre></div>
+Also note, that the <code>ownerGroup</code> must match the same field in the dataset. Same holds for attachments.<p></p>
+<h3 id="adding-attachments">Adding attachments<a class="headerlink" href="#adding-attachments" title="Permanent link">¶</a></h3>
+<p>Here too a POST request will ingest attachments to the dataset, e.g. like this (with placeholders replaced):</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">'POST'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">'http://localhost:3000/api/v4/attachments'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'accept: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">  "ownerGroup": "string",</span>
+<span class="s1">  "accessGroups": [</span>
+<span class="s1">    "string"</span>
+<span class="s1">  ],</span>
+<span class="s1">  "instrumentGroup": "string",</span>
+<span class="s1">  "thumbnail": "string",</span>
+<span class="s1">  "caption": "string",</span>
+<span class="s1">  "relationships": [</span>
+<span class="s1">    {</span>
+<span class="s1">      "targetId": "string",</span>
+<span class="s1">      "targetType": "dataset",</span>
+<span class="s1">      "relationType": "is attached to"</span>
+<span class="s1">    }</span>
+<span class="s1">  ],</span>
+<span class="s1">  "isPublished": true,</span>
+<span class="s1">  "aid": "string"</span>
+<span class="s1">}'</span>
+</code></pre></div>
+<h2 id="pythonic-way-python-sdk">Pythonic way: python sdk<a class="headerlink" href="#pythonic-way-python-sdk" title="Permanent link">¶</a></h2>
+<p>The python software development kit, sdk, is entirely generated from the backend based on the OpenAPI initiative and swagger definitions. Find more info <a href="https://www.piwheels.org/project/scicat-sdk-py/">here</a>.</p>
+<h2 id="pythonic-way-pyscicat">Pythonic way: pyscicat<a class="headerlink" href="#pythonic-way-pyscicat" title="Permanent link">¶</a></h2>
+<p><code>pyscicat</code> has the same functionality as the python sdk but is meant to be more user friendly and maintained by <a href="https://pypi.org/user/dmcreyno/">dmreyno</a>. Some intuitive examples and its documentation how to ingest can be found <a href="https://www.scicatproject.org/pyscicat/howto/ingest.html">here</a>.</p>
+<h2 id="pythonic-way-sciteacean">Pythonic way: sciteacean<a class="headerlink" href="#pythonic-way-sciteacean" title="Permanent link">¶</a></h2>
+<p>Scitacean is a high level Python package for downloading and uploading datasets from and to SciCat.</p>
+<p>See the <a href="https://www.scicatproject.org/scitacean/">documentation</a> for installation and usage instructions.</p>
+<p>If you need help, have a look at our <a href="https://github.com/SciCatProject/scitacean">GitHub discussions</a>. For questions, please start a Q&amp;A discussion if you can't find an answer.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["instant"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
