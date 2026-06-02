@@ -1000,6 +1000,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#history-access-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History Access Groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#subsystems" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1215,8 +1226,93 @@ Special case is for deleting items in SciCat. Users with groups listed in DELETE
 <td>Users whose group is listed here are allowed to delete datasets, origdatablock or datablock</td>
 <td>DatasetDeleteAny , DatasetOrigdatablockDeleteAny , DatasetDatablockDeleteAny</td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>UPDATE_DATASET_LIFECYCLE_GROUPS</td>
+<td>Users of the listed groups can update the lifecycle state fields of a dataset. Authenticated users not in this group (and not in ADMIN_GROUPS) cannot modify lifecycle fields.</td>
+<td>DatasetLifecycleUpdate</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POLICY_GROUPS</td>
+<td>Users of the listed groups can create, read, and update policies. Users in ADMIN_GROUPS always have this permission.</td>
+<td>Create , Read , Update (Policy)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ATTACHMENT_GROUPS</td>
+<td>Users of the listed groups can create, read, update, and delete attachments belonging to groups they are a member of. Setting this to "#all" grants all authenticated users these permissions (this is the default).</td>
+<td>AttachmentCreateInstance , AttachmentReadInstance , AttachmentUpdateInstance , AttachmentDeleteInstance (for own groups)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ATTACHMENT_PRIVILEGED_GROUPS</td>
+<td>Users of the listed groups can create attachments for any owner group, and can read, update, and delete attachments belonging to groups they are a member of or that they have access to.</td>
+<td>AttachmentCreateInstance (any) , AttachmentReadInstance , AttachmentUpdateInstance , AttachmentDeleteInstance (own/access groups)</td>
+</tr>
 </tbody>
 </table>
+<h2 id="history-access-groups">History Access Groups<a class="headerlink" href="#history-access-groups" title="Permanent link">¶</a></h2>
+<p>Change history (audit log) access is controlled by a separate set of group variables, one per tracked entity type. Users in ADMIN_GROUPS always have access to all history. Other users need their group listed in the relevant variable.</p>
+<table>
+<thead>
+<tr>
+<th>Configuration Group List</th>
+<th>Grants access to history of</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HISTORY_ACCESS_DATASET_GROUPS</td>
+<td>Datasets</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_PROPOSAL_GROUPS</td>
+<td>Proposals</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_SAMPLE_GROUPS</td>
+<td>Samples</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_INSTRUMENT_GROUPS</td>
+<td>Instruments</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_PUBLISHED_DATA_GROUPS</td>
+<td>Published data records</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_POLICIES_GROUPS</td>
+<td>Policies</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_DATABLOCK_GROUPS</td>
+<td>Datablocks</td>
+</tr>
+<tr>
+<td>HISTORY_ACCESS_ATTACHMENT_GROUPS</td>
+<td>Attachments</td>
+</tr>
+</tbody>
+</table>
+<p>All history access group variables default to <code>""</code> (no access for non-admin users). A user only needs to be listed in at least one of these variables to access the history endpoint; access to specific entity types is then controlled per-variable.</p>
 <h2 id="subsystems">Subsystems<a class="headerlink" href="#subsystems" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="../authorization_datasets/">Datasets</a></li>

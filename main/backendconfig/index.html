@@ -1190,465 +1190,555 @@
 <p>The list is compiled according to the configuration class defined in <a href="https://github.com/SciCatProject/scicat-backend-next/blob/master/src/config/configuration.ts"><em>src/config/configuration.ts</em></a>.</p>
 <ul>
 <li>
-<p>ADMIN_GROUPS:<br>
-  list of groups that have admin priviliges<br>
-<em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+<p>ADMIN_GROUPS:
+  list of groups that have admin priviliges
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.</p>
 </li>
 <li>
-<p>DELETE_GROUPS:<br>
-  list of groups that are allowed to delete content<br>
-<em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+<p>DELETE_GROUPS:
+  list of groups that are allowed to delete content
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.</p>
 </li>
 <li>
-<p>CREATE_DATASET_GROUPS:<br>
-  list of non admin groups that are allowed to create datasets without pid. The pid is assigned by the system. If set to "#all", all users can create a dataset belonging to any of the groups they belong to.  <br>
-<em>default</em>: "#all"<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+<p>CREATE_DATASET_GROUPS:
+  list of non admin groups that are allowed to create datasets without pid. The pid is assigned by the system. If set to "#all", all users can create a dataset belonging to any of the groups they belong to.
+  <em>default</em>: "#all"
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.</p>
 </li>
 <li>
-<p>CREATE_DATASET_WITH_PID_GROUPS:<br>
-  list of non admin groups that are allowed to create datasets with explicit pid. If set to "#all", all users can create a dataset belonging to any of the groups they belong to and with esplicit pid.<br>
-  If the pid verification is enabled, pid will be validated agains the specification passed.<br>
-<em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+<p>CREATE_DATASET_WITH_PID_GROUPS:
+  list of non admin groups that are allowed to create datasets with explicit pid. If set to "#all", all users can create a dataset belonging to any of the groups they belong to and with esplicit pid.
+  If the pid verification is enabled, pid will be validated agains the specification passed.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.</p>
 </li>
 <li>
-<p>CREATE_DATASET_PRIVILEGED_GROUPS:<br>
-  list of non admin groups that are allowed to create datasets for groups they do not belong to. If set to "#all", all users can create a dataset belonging to any group with explicit pid.<br>
-  If the pid verification is enabled, pid will be validated agains the specification passed.<br>
-<em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.  </p>
+<p>CREATE_DATASET_PRIVILEGED_GROUPS:
+  list of non admin groups that are allowed to create datasets for groups they do not belong to. If set to "#all", all users can create a dataset belonging to any group with explicit pid.
+  If the pid verification is enabled, pid will be validated agains the specification passed.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed.</p>
 </li>
 <li>
-<p>PROPOSAL_GROUPS:<br>
-  list of non admin groups that are allowed to create and update proposals for groups they do not belong to. If set to "#all", all users can create a dataset belonging to any group with explicit pid.<br>
-<em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed  </p>
+<p>PROPOSAL_GROUPS:
+  list of non admin groups that are allowed to create and update proposals for groups they do not belong to. If set to "#all", all users can create a dataset belonging to any group with explicit pid.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
 </li>
 <li>
-<p>SAMPLE_GROUPS:<br>
-  list of non admin groups that are allowed to create and update samples for the groups they belong to. If set to "#all", all users can create a dataset belonging to their group.<br>
-<em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed  </p>
+<p>SAMPLE_GROUPS:
+  list of non admin groups that are allowed to create and update samples for the groups they belong to. If set to "#all", all users can create a dataset belonging to their group.
+  <em>default</em>: "#all"
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
 </li>
 <li>
-<p>SAMPLE_PRIVILEGED_GROUPS:<br>
+<p>SAMPLE_PRIVILEGED_GROUPS:
   list of non admin groups that are allowed to create samples for any groups, but can only update samples belonging to groups they belong to.
-  <em>default</em>: ""<br>
-<em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed  </p>
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
 </li>
 <li>
-<p>ACCESS_GROUPS_STATIC_VALUES:<br>
-  List of groups assigned by default to all users. Used in the vanilla implementation for easy configuration.<br>
-  If you do not want or need to assign any default group, it should be set to empty string "".<br>
-  Default value: ""<br>
-<em>format</em>: Comman separated list of strings. Leading and trailing spaces are trimmed<br>
-<em>example</em>: "group1,group2,group3,..."  </p>
+<p>POLICY_GROUPS:
+  list of groups that are allowed to create, read, and update policies. Users in ADMIN_GROUPS always have this permission regardless of this setting.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>UPDATE_DATASET_LIFECYCLE_GROUPS:
+  list of groups that are allowed to update the lifecycle state of a dataset. Authenticated users not in this list (or ADMIN_GROUPS) cannot modify lifecycle fields.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>CREATE_JOB_PRIVILEGED_GROUPS:
+  list of groups that are allowed to create jobs for any user or group, regardless of the job configuration's <code>create.auth</code> field. Users in this group can also read any job.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>UPDATE_JOB_PRIVILEGED_GROUPS:
+  list of groups that are allowed to update any job, regardless of the job configuration's <code>update.auth</code> field. Users in this group can also read any job.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>DELETE_JOB_GROUPS:
+  list of groups that are allowed to delete any job. Authenticated users not in this list (or ADMIN_GROUPS) cannot delete jobs.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>ATTACHMENT_GROUPS:
+  list of groups that are allowed to create, read, update, and delete attachments belonging to groups they are a member of. If set to "#all", all authenticated users have these permissions.
+  <em>default</em>: "#all"
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>ATTACHMENT_PRIVILEGED_GROUPS:
+  list of groups that are allowed to create attachments for any owner group, and to read, update, and delete attachments belonging to groups they are a member of or that they have access to.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_DATASET_GROUPS:
+  list of groups that are allowed to read the change history of datasets. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_PROPOSAL_GROUPS:
+  list of groups that are allowed to read the change history of proposals. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_SAMPLE_GROUPS:
+  list of groups that are allowed to read the change history of samples. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_INSTRUMENT_GROUPS:
+  list of groups that are allowed to read the change history of instruments. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_PUBLISHED_DATA_GROUPS:
+  list of groups that are allowed to read the change history of published data records. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_POLICIES_GROUPS:
+  list of groups that are allowed to read the change history of policies. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_DATABLOCK_GROUPS:
+  list of groups that are allowed to read the change history of datablocks. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>HISTORY_ACCESS_ATTACHMENT_GROUPS:
+  list of groups that are allowed to read the change history of attachments. Users in ADMIN_GROUPS always have this access.
+  <em>default</em>: ""
+  <em>format</em>: comma separated list of strings. Leading and trailing spaces are trimmed</p>
+</li>
+<li>
+<p>ACCESS_GROUPS_STATIC_VALUES:
+  List of groups assigned by default to all users. Used in the vanilla implementation for easy configuration.
+  If you do not want or need to assign any default group, it should be set to empty string "".
+  Default value: ""
+  <em>format</em>: Comman separated list of strings. Leading and trailing spaces are trimmed
+  <em>example</em>: "group1,group2,group3,..."</p>
 </li>
 <li>
 <p>ACCESS_GROUP_SERVICE_TOKEN:
-  Access token needed to access the API specified in ACCESS_GROUP_SERVICE_API_URL, used to retrieve access groups from a third party system.<br>
-  _format*: string </p>
+  Access token needed to access the API specified in ACCESS_GROUP_SERVICE_API_URL, used to retrieve access groups from a third party system.
+  _format*: string</p>
 </li>
 <li>
-<p>ACCESS_GROUP_SERVICE_API_URL:<br>
-  Well formed url of the service API used to provide access groups. Only one value is allowed.<br>
-<em>format</em>: string<br>
-<em>example</em>: "https://my.access.group/service/api/url"</p>
+<p>ACCESS_GROUP_SERVICE_API_URL:
+  Well formed url of the service API used to provide access groups. Only one value is allowed.
+  <em>format</em>: string
+  <em>example</em>: "https://my.access.group/service/api/url"</p>
 </li>
 <li>
-<p>DOI_PREFIX:<br>
-  The facility DOI prefix, with trailing slash.<br>
-<em>default</em>: ""<br>
-<em>format</em>: string  </p>
+<p>DOI_PREFIX:
+  The facility DOI prefix, with trailing slash.
+  <em>default</em>: ""
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>EXPRESS_SESSION_SECRET:<br>
-  Secret used to set up express session.<br>
-<em>default</em>: ""<br>
-<em>format</em>: string  </p>
+<p>EXPRESS_SESSION_SECRET:
+  Secret used to set up express session.
+  <em>default</em>: ""
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LOGOUT_URL:<br>
-  URL specified upon successful logout. It is returned in the json object for the frontend, or third party UI, to be used locally.<br>
-<em>default</em>: ""<br>
-<em>format</em>: string  </p>
+<p>LOGOUT_URL:
+  URL specified upon successful logout. It is returned in the json object for the frontend, or third party UI, to be used locally.
+  <em>default</em>: ""
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>HTTP_MAX_REDIRECTS:<br>
-  Max number of redirects for http requests.<br>
-<em>default</em>: 5<br>
-<em>format</em>: integer  </p>
+<p>HTTP_MAX_REDIRECTS:
+  Max number of redirects for http requests.
+  <em>default</em>: 5
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>HTTP_TIMEOUT:<br>
-  Timeout from http requests in ms.<br>
-<em>default</em>: 5000<br>
-<em>format</em>: integer</p>
+<p>HTTP_TIMEOUT:
+  Timeout from http requests in ms.
+  <em>default</em>: 5000
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>JWT_SECRET:<br>
-  The secret used to create any JWT token, used for authorization.<br>
-<em>default</em>: ""<br>
-<em>format</em>: string  </p>
+<p>JWT_SECRET:
+  The secret used to create any JWT token, used for authorization.
+  <em>default</em>: ""
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>JWT_EXPIRES_IN:<br>
-  Expiration time of any JWT token in seconds.<br>
-<em>default</em>: 3600 (s)<br>
-<em>format</em>: integer  </p>
+<p>JWT_EXPIRES_IN:
+  Expiration time of any JWT token in seconds.
+  <em>default</em>: 3600 (s)
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>JWT_NEVER_EXPIRES:<br>
-  Length of time that the never expiring jwt token will last.<br>
-<em>default</em>: 100y<br>
-<em>format</em>: string as in number of years  </p>
+<p>JWT_NEVER_EXPIRES:
+  Length of time that the never expiring jwt token will last.
+  <em>default</em>: 100y
+  <em>format</em>: string as in number of years</p>
 </li>
 <li>
-<p>LDAP_URL:<br>
-  Full URI (including port) of your local LDAP server, if this is your selected authentication method.<br>
-<em>default</em>: No default<br>
-<em>example</em>: ldaps://ldap.server.com:636/ <br>
-<em>format</em>: string  </p>
+<p>LDAP_URL:
+  Full URI (including port) of your local LDAP server, if this is your selected authentication method.
+  <em>default</em>: No default
+  <em>example</em>: ldaps://ldap.server.com:636/
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LDAP_BIND_DN:<br>
-  Bind DN to access information on your LDAP server.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string  </p>
+<p>LDAP_BIND_DN:
+  Bind DN to access information on your LDAP server.
+  <em>default</em>: No default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LDAP_BIND_CREDENTIALS:<br>
-  Credentials associated with your bind DN to acccess your LDAP server.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string  </p>
+<p>LDAP_BIND_CREDENTIALS:
+  Credentials associated with your bind DN to acccess your LDAP server.
+  <em>default</em>: No default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LDAP_SEARCH_BASE:<br>
-  Search base for your LDAP server.<br>
-<em>default</em>: No default <br>
-<em>format</em>: string  </p>
+<p>LDAP_SEARCH_BASE:
+  Search base for your LDAP server.
+  <em>default</em>: No default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LDAP_SEARCH_FILTER:<br>
-  Search filter for you LDAP server.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string <br>
-<em>example</em>: "(LDAPUsername={{username}})"  </p>
+<p>LDAP_SEARCH_FILTER:
+  Search filter for you LDAP server.
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "(LDAPUsername={{username}})"</p>
 </li>
 <li>
-<p>LDAP_MODE:<br>
-  type of ldap server we are communicating with<br>
-<strong><em>NEEDS TO BE UPDATED. Not sure which other values are accepted</em></strong><br>
-<em>default</em>: ad<br>
-<em>format</em>: string<br>
-<em>acceptable values</em>: ad  </p>
+<p>LDAP_MODE:
+  type of ldap server we are communicating with
+  <strong><em>NEEDS TO BE UPDATED. Not sure which other values are accepted</em></strong>
+  <em>default</em>: ad
+  <em>format</em>: string
+  <em>acceptable values</em>: ad</p>
 </li>
 <li>
-<p>LDAP_EXTERNAL_ID:<br>
-  LDAP matching field that provides the external id<br>
-<em>default</em>: sAMAccountName<br>
-<em>format</em>: string  </p>
+<p>LDAP_EXTERNAL_ID:
+  LDAP matching field that provides the external id
+  <em>default</em>: sAMAccountName
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LDAP_USERNAME:<br>
-  LDAP field providing the username<br>
-<em>default</em>: displayName<br>
-<em>format</em>: string  </p>
+<p>LDAP_USERNAME:
+  LDAP field providing the username
+  <em>default</em>: displayName
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>OIDC_ISSUER:<br>
-  Full URL of your OIDC identity provider<br>
-<em>default</em>: No default<br>
-<em>format</em>: string<br>
-<em>example</em>: "https://identity.your.facility/your/realm"  </p>
+<p>OIDC_ISSUER:
+  Full URL of your OIDC identity provider
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "https://identity.your.facility/your/realm"</p>
 </li>
 <li>
-<p>OIDC_CLIENT_ID:<br>
-  Client id used to convert OIDC code to OIDC token. This is assigned in the OIDC service when the token is generated<br>
-<em>default</em>: No default<br>
-<em>format</em>: string<br>
-<em>example</em>: "scicat"  </p>
+<p>OIDC_CLIENT_ID:
+  Client id used to convert OIDC code to OIDC token. This is assigned in the OIDC service when the token is generated
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "scicat"</p>
 </li>
 <li>
-<p>OIDC_CLIENT_SECRET: <br>
-  Token used to convert OIDC code to OIDC token. This is assigned in the OIDC service when the token is generated<br>
-<em>example</em>: "90f1268..."  </p>
+<p>OIDC_CLIENT_SECRET:
+  Token used to convert OIDC code to OIDC token. This is assigned in the OIDC service when the token is generated
+  <em>example</em>: "90f1268..."</p>
 </li>
 <li>
-<p>OIDC_CALLBACK_URL:<br>
-  URL of the endpoint that is called when the authentication has been executed with the OIDC service. <br>
-<em>default</em>: No default <br>
-<em>format</em>: string  <br>
-<em>example</em>: "http://localhost:3000/api/v3/oidc/callback"  </p>
+<p>OIDC_CALLBACK_URL:
+  URL of the endpoint that is called when the authentication has been executed with the OIDC service.
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "http://localhost:3000/api/v3/oidc/callback"</p>
 </li>
 <li>
-<p>OIDC_SCOPE:<br>
-  Information returned by the OIDC service together with token<br>
-<em>default</em>: No default<br>
-<em>format</em>: string <br>
-<em>example</em>: "openid profile email"  </p>
+<p>OIDC_SCOPE:
+  Information returned by the OIDC service together with token
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "openid profile email"</p>
 </li>
 <li>
-<p>OIDC_SUCCESS_URL:<br>
-  Frontend URL that the user is directed to after a successful authentication. It must be a valid frontend URL.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string<br>
-<em>example</em>: "http://localhost:3000/Datasets"  </p>
+<p>OIDC_SUCCESS_URL:
+  Frontend URL that the user is directed to after a successful authentication. It must be a valid frontend URL.
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "http://localhost:3000/Datasets"</p>
 </li>
 <li>
-<p>OIDC_ACCESS_GROUPS:<br>
-  field used to retrieve access groups from the OIDC service. It is not used in the vanilla implementation.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string<br>
-<em>example</em>: "access_groups"  </p>
+<p>OIDC_ACCESS_GROUPS:
+  field used to retrieve access groups from the OIDC service. It is not used in the vanilla implementation.
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "access_groups"</p>
 </li>
 <li>
-<p>OIDC_ACCESS_GROUPS_PROPERTY:<br>
-  name of the OIDC property used to retrieve the users groups from OIDC.<br>
-<em>default</em>: none<br>
-<em>format</em>: string  </p>
+<p>OIDC_ACCESS_GROUPS_PROPERTY:
+  name of the OIDC property used to retrieve the users groups from OIDC.
+  <em>default</em>: none
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>OIDC_AUTO_LOGOUT:<br>
-  if enabled, when login out from SciCat, we logout from OIDC also.<br>
-<em>default</em>: false<br>
-<em>format</em>: boolean  </p>
+<p>OIDC_AUTO_LOGOUT:
+  if enabled, when login out from SciCat, we logout from OIDC also.
+  <em>default</em>: false
+  <em>format</em>: boolean</p>
 </li>
 <li>
-<p>OIDC_RETURN_URL:<br>
-  URL the user is redirected after a successful logout<br>
-<em>default</em>: none<br>
-<em>format</em>: string  </p>
+<p>OIDC_RETURN_URL:
+  URL the user is redirected after a successful logout
+  <em>default</em>: none
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LOGBOOK_ENABLED:<br>
-  Flag to enable/disable the Logbook endpoints.<br>
-  accept values: "yes", "no"<br>
-<em>default</em>: no <br>
-<em>format</em>: string  </p>
+<p>LOGBOOK_ENABLED:
+  Flag to enable/disable the Logbook endpoints.
+  accept values: "yes", "no"
+  <em>default</em>: no
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LOGBOOK_BASE_URL:<br>
-  The base URL to the SciChat wrapper API. Only required if Logbook is enabled.<br>
-<em>default</em>: "http://localhost:3030/scichatapi"<br>
-<em>format</em>: string  </p>
+<p>LOGBOOK_BASE_URL:
+  The base URL to the SciChat wrapper API. Only required if Logbook is enabled.
+  <em>default</em>: "http://localhost:3030/scichatapi"
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LOGBOOK_USERNAME:<br>
-  The username used to authenticate to the SciChat wrapper API. Only required if Logbook is enabled.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string  </p>
+<p>LOGBOOK_USERNAME:
+  The username used to authenticate to the SciChat wrapper API. Only required if Logbook is enabled.
+  <em>default</em>: No default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>LOGBOOK_PASSWORD:<br>
-  The password used to authenticate to the SciChat wrapper API. Only required if Logbook is enabled.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string  </p>
+<p>LOGBOOK_PASSWORD:
+  The password used to authenticate to the SciChat wrapper API. Only required if Logbook is enabled.
+  <em>default</em>: No default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>METADATA_KEYS_RETURN_LIMIT:<br>
-  The maximum number of keys returned by the <code>/Datasets/metadataKeys</code> endpoint.<br>
-<em>default</em>: No default<br>
-<em>format</em>: integer  </p>
+<p>METADATA_KEYS_RETURN_LIMIT:
+  The maximum number of keys returned by the <code>/Datasets/metadataKeys</code> endpoint.
+  <em>default</em>: No default
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>METADATA_PARENT_INSTANCES_RETURN_LIMIT:<br>
-  The maximum number of Datasets used to extract metadata keys in the <code>/Datasets/metadataKeys</code> endpoint.<br>
-<em>default</em>: No default<br>
-<em>format</em>: integer  </p>
+<p>METADATA_PARENT_INSTANCES_RETURN_LIMIT:
+  The maximum number of Datasets used to extract metadata keys in the <code>/Datasets/metadataKeys</code> endpoint.
+  <em>default</em>: No default
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>MONGODB_URI:<br>
-  The URI for your MongoDB instance.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string "mongodb://<username>:<password>@<host>:27017/<db_name>"  </db_name></host></password></username></p>
+<p>MONGODB_URI:
+  The URI for your MongoDB instance.
+  <em>default</em>: No default
+  <em>format</em>: string "mongodb://<username>:<password>@<host>:27017/<db_name>"</db_name></host></password></username></p>
 </li>
 <li>
-<p>OAI_PROVIDER_ROUTE:<br>
-  URI to OAI provider, which is used in the <code>/publisheddata/:id/resync</code> endpoint.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>OAI_PROVIDER_ROUTE:
+  URI to OAI provider, which is used in the <code>/publisheddata/:id/resync</code> endpoint.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>PID_PREFIX:<br>
-  The facility PID prefix, with trailing slash.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>PID_PREFIX:
+  The facility PID prefix, with trailing slash.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>PUBLIC_URL_PREFIX:<br>
-  The base URL to the facility Landing Page.<br>
-<em>default</em>: No default<br>
-<em>format</em>: string<br>
-<em>example</em>: "https://doi.ess.eu/detail/"  </p>
+<p>PUBLIC_URL_PREFIX:
+  The base URL to the facility Landing Page.
+  <em>default</em>: No default
+  <em>format</em>: string
+  <em>example</em>: "https://doi.ess.eu/detail/"</p>
 </li>
 <li>
-<p>PORT:<br>
-  The port on which the backend listen on.<br>
-<em>default</em>: 3000<br>
-<em>format</em>: integer  </p>
+<p>PORT:
+  The port on which the backend listen on.
+  <em>default</em>: 3000
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>RABBITMQ_ENABLED:<br>
-  Flag to enable/disable RabbitMQ consumer.<br>
-  accepted values: "yes", "no"<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no<br>
-<em>format</em>: string  </p>
+<p>RABBITMQ_ENABLED:
+  Flag to enable/disable RabbitMQ consumer.
+  accepted values: "yes", "no"
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>RABBITMQ_HOSTNAME:<br>
-  The hostname of the RabbitMQ message broker. Only required if RabbitMQ is enabled.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>default</em>: string  </p>
+<p>RABBITMQ_HOSTNAME:
+  The hostname of the RabbitMQ message broker. Only required if RabbitMQ is enabled.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>default</em>: string</p>
 </li>
 <li>
-<p>RABBITMQ_USERNAME:<br>
-  The username used to authenticate to the RabbitMQ message broker. Only required if RabbitMQ is enabled.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>RABBITMQ_USERNAME:
+  The username used to authenticate to the RabbitMQ message broker. Only required if RabbitMQ is enabled.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>RABBITMQ_PASSWORD:<br>
+<p>RABBITMQ_PASSWORD:
   The password used to authenticate to the RabbitMQ message broker. Only required if RabbitMQ is
-  enabled.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+  enabled.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>REGISTER_DOI_URI:<br>
-  URI to the organization that registers the facilities DOIs.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string<br>
-<em>example</em>: "https://mds.test.datacite.org/doi"  </p>
+<p>REGISTER_DOI_URI:
+  URI to the organization that registers the facilities DOIs.
+  <em>default</em>: no default
+  <em>format</em>: string
+  <em>example</em>: "https://mds.test.datacite.org/doi"</p>
 </li>
 <li>
-<p>REGISTER_METADATA_URI:<br>
-  URI to the organization that registers the facilities published data metadata.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string<br>
-<em>example</em>: ="https://mds.test.datacite.org/metadata"  </p>
+<p>REGISTER_METADATA_URI:
+  URI to the organization that registers the facilities published data metadata.
+  <em>default</em>: no default
+  <em>format</em>: string
+  <em>example</em>: ="https://mds.test.datacite.org/metadata"</p>
 </li>
 <li>
 <p>DOI_USERNAME:
-  Username used to authenticate on the DOI site<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+  Username used to authenticate on the DOI site
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>DOI_PASSWORD:<br>
-  Password used to authenticate on the DOI site<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>DOI_PASSWORD:
+  Password used to authenticate on the DOI site
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>SITE:<br>
-  The name of your site.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>SITE:
+  The name of your site.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>SMTP_HOST:<br>
-  Host of SMTP server.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>SMTP_HOST:
+  Host of SMTP server.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>SMTP_MESSAGE_FROM:<br>
-  Email address that emails should be sent from.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string, email  </p>
+<p>SMTP_MESSAGE_FROM:
+  Email address that emails should be sent from.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>format</em>: string, email</p>
 </li>
 <li>
-<p>SMTP_PORT:<br>
-  Port of SMTP server.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>SMTP_PORT:
+  Port of SMTP server.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>SMTP_SECURE:<br>
-  Secure of SMTP server.<br>
-<em>deprecated</em>. Will be removed in future releases.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>SMTP_SECURE:
+  Secure of SMTP server.
+  <em>deprecated</em>. Will be removed in future releases.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>POLICY_PUBLICATION_SHIFT:<br>
-  Number of years that needs to elapse before the dataset is made publicly acceessible<br>
-<em>default</em>: 3<br>
-<em>format</em>: integer  </p>
+<p>POLICY_PUBLICATION_SHIFT:
+  Number of years that needs to elapse before the dataset is made publicly acceessible
+  <em>default</em>: 3
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>POLICY_RETENTION_SHIFT:<br>
-  Number of years that the datasets are kept online before are archived or deleted. A negative value means that they are never archived/deleted<br>
-<em>default</em>: -1<br>
-<em>format</em>: integer  </p>
+<p>POLICY_RETENTION_SHIFT:
+  Number of years that the datasets are kept online before are archived or deleted. A negative value means that they are never archived/deleted
+  <em>default</em>: -1
+  <em>format</em>: integer</p>
 </li>
 <li>
-<p>ELASTICSEARCH_ENABLED:<br>
-  Flag to enable/disable the ElasticSearch service<br>
-  accept values: "yes", "no"<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>ELASTICSEARCH_ENABLED:
+  Flag to enable/disable the ElasticSearch service
+  accept values: "yes", "no"
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>ES_HOST:<br>
-  The base URL to the Elasticsearch cluster. Use <code>http</code> if xpack.security is disabled<br>
-<em>default</em>: no default<br>
-<em>format</em>: string <br>
-<em>example</em>: "https://localhost:9200" or "http://localhost:9200"  </p>
+<p>ES_HOST:
+  The base URL to the Elasticsearch cluster. Use <code>http</code> if xpack.security is disabled
+  <em>default</em>: no default
+  <em>format</em>: string
+  <em>example</em>: "https://localhost:9200" or "http://localhost:9200"</p>
 </li>
 <li>
-<p>MONGODB_COLLECTION:<br>
-  Collection name to be mapped into specified Elasticsearch index<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>MONGODB_COLLECTION:
+  Collection name to be mapped into specified Elasticsearch index
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>ES_MAX_RESULT: <br>
-  Maximum records can be indexed into Elasticsearch.<br>
-<em>default</em>: 10000<br>
-<em>format</em>: number  </p>
+<p>ES_MAX_RESULT:
+  Maximum records can be indexed into Elasticsearch.
+  <em>default</em>: 10000
+  <em>format</em>: number</p>
 </li>
 <li>
-<p>ES_FIELDS_LIMIT: <br>
-  The total number of fields in an index.<br>
-<em>default</em>: 1000<br>
-<em>format</em>: number  </p>
+<p>ES_FIELDS_LIMIT:
+  The total number of fields in an index.
+  <em>default</em>: 1000
+  <em>format</em>: number</p>
 </li>
 <li>
-<p>ES_INDEX:<br>
-  The total number of fields in an index.<br>
-<em>default</em>: no default<br>
-<em>format</em>: string  </p>
+<p>ES_INDEX:
+  The total number of fields in an index.
+  <em>default</em>: no default
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>ES_REFRESH:<br>
-  The total number of fields in an index.<br>
-  accept values: true, false, "wait_for"<br>
-<em>default</em>: false<br>
-<em>format</em>: boolean or string  </p>
+<p>ES_REFRESH:
+  The total number of fields in an index.
+  accept values: true, false, "wait_for"
+  <em>default</em>: false
+  <em>format</em>: boolean or string</p>
 </li>
 <li>
-<p>ES_USERNAME:<br>
-  Elasticsearch cluster username.<br>
-<em>default</em>: no default, optional.<br>
-<em>format</em>: string  </p>
+<p>ES_USERNAME:
+  Elasticsearch cluster username.
+  <em>default</em>: no default, optional.
+  <em>format</em>: string</p>
 </li>
 <li>
-<p>ELASTIC_PASSWORD: <br>
-  Elasticsearch cluster password.<br>
-<em>default</em>: no default.<br>
-<em>format</em>: string  </p>
+<p>ELASTIC_PASSWORD:
+  Elasticsearch cluster password.
+  <em>default</em>: no default.
+  <em>format</em>: string</p>
 </li>
 </ul>
 <h2 id="environment-variables-as-now">Environment Variables as now<a class="headerlink" href="#environment-variables-as-now" title="Permanent link">¶</a></h2>
@@ -1698,14 +1788,27 @@ DATASET_CREATION_VALIDATION_REGEX="^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][
 
 ADMIN_GROUPS=""
 DELETE_GROUPS=""
-CREATE_DATASET_GROUPS="all"
+CREATE_DATASET_GROUPS="#all"
 CREATE_DATASET_WITH_PID_GROUPS=""
 CREATE_DATASET_PRIVILEGED_GROUPS=""
-CREATE_JOB_GROUPS=""
-UPDATE_JOB_GROUPS=""
+UPDATE_DATASET_LIFECYCLE_GROUPS=""
+CREATE_JOB_PRIVILEGED_GROUPS=""
+UPDATE_JOB_PRIVILEGED_GROUPS=""
+DELETE_JOB_GROUPS=""
 SAMPLE_PRIVILEGED_GROUPS="sampleingestor"
 SAMPLE_GROUPS="group1"
 PROPOSAL_GROUPS=""
+POLICY_GROUPS=""
+ATTACHMENT_GROUPS="#all"
+ATTACHMENT_PRIVILEGED_GROUPS=""
+HISTORY_ACCESS_DATASET_GROUPS=""
+HISTORY_ACCESS_PROPOSAL_GROUPS=""
+HISTORY_ACCESS_SAMPLE_GROUPS=""
+HISTORY_ACCESS_INSTRUMENT_GROUPS=""
+HISTORY_ACCESS_PUBLISHED_DATA_GROUPS=""
+HISTORY_ACCESS_POLICIES_GROUPS=""
+HISTORY_ACCESS_DATABLOCK_GROUPS=""
+HISTORY_ACCESS_ATTACHMENT_GROUPS=""
 
 ACCESS_GROUPS_GRAPHQL_ENABLED=true
 ACCESS_GROUP_SERVICE_TOKEN=""
