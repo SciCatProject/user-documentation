@@ -10,6 +10,8 @@ Generally, actions depend on what is implemented at your site and can cover a wi
 comprising them into a *new datacollection of a custom type* [(see advanced documentation)](../datasets/datasetTypes.md) to
 using that selection of datasets to *run an analysis* on them.
 
+Datasets can also store **relationships** to other datasets or external entities, e.g. a logbook entry or a journal article. See [relationships](relationships.md) for details.
+
 ## How to search for datasets
 Datasets can be queried in several places: 
 
