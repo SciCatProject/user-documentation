@@ -28,6 +28,7 @@ If enabled, the dataset detail page shows a **Relationships** tab listing all re
 
 ![Relationships tab](img/dataset_relationships_tab.png)
 
+## Enabling in the frontend
 The tab's visibility is controlled by the `datasetRelationshipsEnabled` frontend config key, see the [frontend configuration guide](../frontendconfig/index.md).
 
 ## Example usage
