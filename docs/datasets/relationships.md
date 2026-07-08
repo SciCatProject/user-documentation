@@ -1,6 +1,6 @@
 # Relationships
 
-Datasets can store **relationships** to other entities, either other datasets in the same SciCat catalog or entities outside of it, e.g. a [SciLog](https://scilog.readthedocs.io) logbook entry, a journal article (via DOI) or an arXiv preprint. Previously, relationships could only point to other SciCat datasets; the schema was generalized to support external entities too, see [backend PR](https://github.com/SciCatProject/backend/pull/2661).
+Datasets can store **relationships** to other entities, either other datasets in the same SciCat catalog or entities outside of it, e.g. a [SciLog](https://github.com/paulscherrerinstitute/scilog/blob/main/README.md) logbook entry, a journal article (via DOI) or an arXiv preprint. Previously, relationships could only point to other SciCat datasets; the schema was generalized to support external entities too, see [backend PR](https://github.com/SciCatProject/backend/pull/2661).
 
 Relationships are displayed on the dataset detail page in a dedicated **Relationships** tab, see [frontend PR](https://github.com/SciCatProject/frontend/pull/2416).
 
@@ -29,7 +29,7 @@ If enabled, the dataset detail page shows a **Relationships** tab listing all re
 ![Relationships tab](img/dataset_relationships_tab.png)
 
 ## Enabling in the frontend
-The tab's visibility is controlled by the `datasetRelationshipsEnabled` frontend config key, see the [frontend configuration guide](../frontendconfig/index.md).
+The tab's visibility is controlled by the `datasetRelationshipsEnabled` frontend config key, see the [frontend configuration guide](../frontendconfig/index.md#dataset-tabs).
 
 ## Example usage
 
