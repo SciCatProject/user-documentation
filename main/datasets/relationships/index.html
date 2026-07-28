@@ -1000,6 +1000,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enabling-in-the-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling in the frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1028,7 +1039,7 @@
 
 
 <h1 id="relationships">Relationships<a class="headerlink" href="#relationships" title="Permanent link">¶</a></h1>
-<p>Datasets can store <strong>relationships</strong> to other entities, either other datasets in the same SciCat catalog or entities outside of it, e.g. a <a href="https://scilog.readthedocs.io">SciLog</a> logbook entry, a journal article (via DOI) or an arXiv preprint. Previously, relationships could only point to other SciCat datasets; the schema was generalized to support external entities too, see <a href="https://github.com/SciCatProject/backend/pull/2661">backend PR</a>.</p>
+<p>Datasets can store <strong>relationships</strong> to other entities, either other datasets in the same SciCat catalog or entities outside of it, e.g. a <a href="https://github.com/paulscherrerinstitute/scilog/blob/main/README.md">SciLog</a> logbook entry, a journal article (via DOI) or an arXiv preprint. Previously, relationships could only point to other SciCat datasets; the schema was generalized to support external entities too, see <a href="https://github.com/SciCatProject/backend/pull/2661">backend PR</a>.</p>
 <p>Relationships are displayed on the dataset detail page in a dedicated <strong>Relationships</strong> tab, see <a href="https://github.com/SciCatProject/frontend/pull/2416">frontend PR</a>.</p>
 <p>The schema is inspired by DataCite's <a href="https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/relatedidentifier/">relatedIdentifier</a> property, where <code>identifierType</code> roughly corresponds to DataCite's <code>relatedIdentifierType</code>, <code>relationship</code> to <code>relationType</code>, and <code>entityType</code> to <code>resourceTypeGeneral</code>.</p>
 <h2 id="relationship-fields">Relationship fields<a class="headerlink" href="#relationship-fields" title="Permanent link">¶</a></h2>
@@ -1080,7 +1091,8 @@
 <h2 id="viewing-relationships-in-the-ui">Viewing relationships in the UI<a class="headerlink" href="#viewing-relationships-in-the-ui" title="Permanent link">¶</a></h2>
 <p>If enabled, the dataset detail page shows a <strong>Relationships</strong> tab listing all relationships of the dataset in a table, with client-side pagination and sorting. Identifiers of type <code>URL</code> or <code>DOI</code> are rendered as clickable links, other identifier types are shown as plain text.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/dataset_relationships_tab.png" data-desc-position="bottom"><img alt="Relationships tab" src="../img/dataset_relationships_tab.png"></a></p>
-<p>The tab's visibility is controlled by the <code>datasetRelationshipsEnabled</code> frontend config key, see the <a href="../../frontendconfig/">frontend configuration guide</a>.</p>
+<h2 id="enabling-in-the-frontend">Enabling in the frontend<a class="headerlink" href="#enabling-in-the-frontend" title="Permanent link">¶</a></h2>
+<p>The tab's visibility is controlled by the <code>datasetRelationshipsEnabled</code> frontend config key, see the <a href="../../frontendconfig/#dataset-tabs">frontend configuration guide</a>.</p>
 <h2 id="example-usage">Example usage<a class="headerlink" href="#example-usage" title="Permanent link">¶</a></h2>
 <p>Relationships can be added or updated via <code>PATCH /api/v4/datasets/:pid</code>, for example to link a dataset to a SciLog logbook and a journal article:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
