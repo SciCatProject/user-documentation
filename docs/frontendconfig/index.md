@@ -2,24 +2,24 @@
 
 SciCat's frontend configuration is managed in two configuration file, both served through the backend configuration:
 
-1. Frontend Config: [frontend.config.json](https://github.com/SciCatProject/backend/blob/master/src/config/frontend.config.json) defines the setup of the UI componets. For more information on the Frontedend Config definitions see [here](https://www.scicatproject.org/backend/main/frontend-config-guide/frontend-config/) 
+1. Frontend Config: [frontend.config.json](https://github.com/SciCatProject/backend/blob/master/src/config/frontend.config.json) defines the setup of the UI componets. For latest version of it, see [here](https://www.scicatproject.org/backend/main/frontend-config-guide/frontend-config/) 
 2. Frontend Theme Config: [frontend.theme.json](https://github.com/SciCatProject/backend/blob/master/src/config/frontend.theme.json) defines the theming (color, font color etc) of the UI components.
 
-The two frontend configs are served through the backend API so that it can be updated with ease. Adding these configs to the frontend would require a build step everytime the configuration file changed. To find out how to add the frontend configuration files to the backend please see [here](../backendconfig/index.md/#central-configuration-of-backend-env)
+The two frontend configs are served through the backend API. Adding these configs to the frontend would require a build step everytime the configuration file changed. To find out how to add the frontend configuration files to the backend please see [here](../backendconfig/index.md/#central-configuration-of-backend-env).
 
 
-# Default List & Filter Configuration Pattern - Frontend Configuration Guide
+## Default List & Filter Configuration Pattern - Frontend Configuration Guide
 
-## Overview
+### Overview
 
 This guide explains how to configure the List & Side-Panel Configuration Pattern used on the frontend.
 It allows customizing how list-based components (e.g., datasets, proposals) display table columns, side-panel filters, and optional query conditions.
 
 The configuration should be defined or mounted at the location specified by the environment variable `FRONTEND_CONFIG_FILE` (default: `src/config/frontend.config.json`).
 
-## Configuration Details
+### Configuration Details
 
-### **Columns**
+#### **Dataset Columns**
 
 Defines how each field is displayed in the list table.
 
@@ -35,7 +35,7 @@ Defines how each field is displayed in the list table.
 
 ---
 
-### **Filters**
+#### **Filters**
 
 Defines which filters appear in the side panel and how they behave.
 
@@ -49,7 +49,7 @@ Defines which filters appear in the side panel and how they behave.
 
 ---
 
-### **Conditions**
+#### **Conditions**
 
 Defines predefined condition filter in the side panel (currently supported only for the dataset table)
 
@@ -62,6 +62,15 @@ Defines predefined condition filter in the side panel (currently supported only 
 | `unit`       | `string` | **Optional** unit for the value                       | `"mbar l/s/cm^2"`   | 
 | `unitsOptions`| `string[]`| **Optional** A list of allowed units for this condition. When provided, the unit dropdown will be restricted to only these options   | `["mbar l/s/cm^2", "Pa m^3/s/m^2"]`
 
-# Dynamic Dataset Detail Component
 
-The Dynamic Dataset Detail component can be customized to display dataset information in various templates and layouts based on your needs. It is an extra configuration file used in the Frontend Config. For more information on how to set this up please see [here](https://www.scicatproject.org/backend/main/frontend-config-guide/dynamic-dataset-detail-component/)
+## Dataset tabs
+
+Several tabs are possible. 
+
+### Relationships
+The extended relationship tab can be handled by this flag [`datasetRelationshipsEnabled`](https://github.com/SciCatProject/backend/blob/master/src/config/frontend.config.json#L14). It now enables also external references, see also [here](../datasets/relationships.md) .
+
+## Dynamic Dataset Detail Component
+
+The Dynamic Dataset Detail component can be customized to display dataset information in various templates and layouts based on your needs. It is an extra configuration file used in the Frontend Config. For more information on how to set this up please see [here](https://www.scicatproject.org/backend/main/frontend-config-guide/dynamic-dataset-detail-component/).
+
